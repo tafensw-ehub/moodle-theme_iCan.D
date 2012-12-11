@@ -1,1 +1,1 @@
-A highly configurable theme for the Moodle learning management system.
+A highly configurable theme for the Moodle learning management system, version 2.0 or later.

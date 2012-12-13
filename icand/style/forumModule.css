@@ -1,0 +1,67 @@
+/**
+ * Licence 
+ * 
+ * This software is distributed under the terms and conditions of the GNU General Public Licence, v 3 (GPL). 
+ * The complete terms and conditions of the GPL are available at http://www.gnu.org/licenses/gpl-3.0.txt
+ * 
+ * Copyright Notice 
+ *
+ * Copyright © NSW Technical and Further Education Commission (TAFE NSW), TAFE eLearning Hub 2012 
+ *
+ * Acknowledgements
+ * - Renee Lance, project manager and lead designer 
+ * - Glen Byram, lead programmer
+ *
+ * Created:01/06/12 - Renee Lance TAFE eLearning Hub
+ * Modified by: 20/06/12 - Renee Lance TAFE eLearning Hub
+*/
+
+
+
+/*/=====================mainstrip overide============================*/
+
+.path-mod-forum table.forumheaderlist{
+	width:97%;
+	border-collapse:collapse;
+	border:0;
+	font-size:90%;
+	margin:0;
+}
+.path-mod-forum table.forumheaderlist th{
+	background-color:#f6f6f6;
+	color:#214A75;
+	padding:5px;
+	font-weight:bold;
+	border:1px solid #d7d7d7;	
+	font-size:110%;
+}
+.path-mod-forum table.forumheaderlist td{
+	
+	padding: 5px 10px;
+	background-color:#ffffff;
+	border:1px solid #d7d7d7;	
+}
+.path-mod-forum .forumheaderlist .discussion .starter a{
+	font-weight:bold;
+}
+.path-mod-forum .forumheaderlist .discussion .lastpost{
+	text-align:left;	
+}
+.forumaddnew{
+	text-align:right;
+	width:97%;
+	border-top:1px dotted #999999;
+	padding-top:10px;
+}
+/*/===========================Forum posts===========================/*/
+.forumpost{
+	border:1px solid #d7d7d7;
+	background:#ffffff;
+	padding:10px;	
+}
+.subject{
+		font-weight:bold;
+	border-bottom:1px solid #d7d7d7;	
+	font-size:110%;
+	margin-bottom:10px;
+}

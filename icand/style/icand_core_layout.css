@@ -1,0 +1,804 @@
+/**
+ * Licence 
+ * 
+ * This software is distributed under the terms and conditions of the GNU General Public Licence, v 3 (GPL). 
+ * The complete terms and conditions of the GPL are available at http://www.gnu.org/licenses/gpl-3.0.txt
+ * 
+ * Copyright Notice 
+ *
+ * Copyright © NSW Technical and Further Education Commission (TAFE NSW), TAFE eLearning Hub 2012 
+ *
+ * Acknowledgements
+ * - Renee Lance, project manager and lead designer 
+ * - Glen Byram, lead programmer
+ *
+ * @package		theme
+ * @subpackage	icand
+ * @copyright	NSW Technical and Further Education Commission (TAFE NSW), TAFE eLearning Hub 2012
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @author		Glen Byram (NSW TAFE eLearning Hub)
+ * @version		08Oct2012
+ * Created: 01Apr2012  - Glen Byram TAFE eLearning Hub
+ * Modified: 03Aug2012 - glen added .dockedtitle.activeitem & #dockeditempanel 100% rules for MSIE7/8
+ *					 - glenremoved width:100% from body
+ *			26Sep2012 - glen added overflow:hidden to icand_strct_boxrowcell
+ *			29Sep2012 - glen added rule for #icand_editthemebutton
+ *			03Oct2012 - glen added rule for popup buttons to be "fixed" position
+ *			12Oct2012 - glen finished adding prefixes for all icand_ elements, reduced z-index use (due change to msie table nesting)
+ *			01Nov2012 - glen added little fix to prevent another fix overriding a general rule
+ */
+ 
+/*
+ * The basic Moodle architecture is as follows, from the "holy grail" pattern of matthewjamestaylor.com (N.B. the original
+ * has an infernal sliding block-within-block format. Maybe it is a false grail?
+ * #page
+ *   #page-header
+ *   #page-content
+ *   |  #region-main-box
+ *   |    #region-post-box
+ *   |      #region-main-wrap
+ *   |      |  #region-main
+ *   |      |    .region-content
+ *   |      #region-pre
+ *   |      |  .region-content
+ *   |      #region-post
+ *   |      |  .region-content
+ *   #page-footer
+ */
+
+/* #custom_menu_2 { visibility: hidden; } */
+.icand_hideuntilpageloaded  #custom_menu_2 .custom_menu_submenu{ visibility: hidden; }
+
+/* ================= in-course button to open editing menu ===================================== */
+
+#icand_fixedcontrolarea	{	/* =IcandConstantsCSS::CSS_ID_FIXED_CONTROL_AREA, added 29Sep2012 */ 
+	position:fixed;
+	top:0;
+	left:40%;
+	z-index:9979;	
+}
+
+/* #icand_editthemebutton -- no styles @ the moment ;) */
+
+/* ================= the in-course popup editing menu ========================================== */
+#icand_editlayer {	/* = IcandConstantsCSS::CSS_ID_EDITLAYER */
+	display:none;/*javascript will change this to 'block' to reveal it*/
+	background:none;
+	z-index:9999;/*covers everything else*/
+	position:fixed;
+}
+
+#icand_editmenu {
+	position:absolute;	
+	width:70%;
+	left:15%;
+	top:5%;
+	padding:20px;
+	bottom:10%;
+	overflow-y:scroll;
+}
+
+#icand_popupbuttons {
+	position:fixed;
+	bottom:5%;	/* sit at bottom of icand_editmenu */
+	left:40%;	/* sit at centre of icand_editmenu */
+}
+
+/* colours */
+#icand_editlayer,	/* = IcandConstantsCSS::CSS_ID_EDITLAYER */
+#icand_editmenu  {
+	border:20px solid red;	
+}
+#icand_editmenu {
+	background:white;
+}
+#icand_popupbuttons {
+	background:red;
+	border:20px solid red;
+}
+
+/* ============================================================================================= */
+.icand_strct_container {	position:relative;}
+.icand_strct_fullwidth {	width:100%;}
+.clear_all {	clear:both;}
+
+.icand_strct_centredhoriz {
+	margin-left:auto;
+	margin-right:auto;
+	margin:auto;
+}
+
+.icand_msie_table {
+/*R22May2012 	table-layout:fixed; /* ??? NEEDED FOR IE7.. otherwise width=infinity */
+	border-collapse:collapse;
+	border-spacing:0;
+	border:0;
+	margin:0;
+	padding:0;
+	zoom:1;
+	width:100%;
+}
+
+.icand_msie_td {
+	background-color:transparent;
+	border:0;
+	margin:0;
+	padding:0;
+	vertical-align:top;
+}
+
+.icand_msie_td .block {
+	width:auto; 	/* IE6 floats them all together otherwise */
+	overflow:hidden;
+	height:100%; /* MSIE6. fit contents to overflow:hidden */
+}
+
+.icand_msie_td .icand_strct_boxrowcell {
+	padding:0;
+	margin:0;
+}
+
+.icand_msie_td .icand_strct_msiedouble_box {
+	padding:0;
+	margin:0;
+}
+
+/* .icand_strct_msie_resizingcell , */
+.icand_msie_td.icand_strct_msie_resizingcell {
+/*	width:auto;	/* to expand to fill space */ /*08oct*/
+}
+
+.icand_msie_td.icand_strct_msie_resizingcell {
+/*	width:1px;/*08oct*/
+}
+.icand_strct_containercell.icand_strct_inside_msie_td.icand_strct_boxrowcell.icand_strct_msie_resizingcell {
+/*	width:1px;/*08oct*/
+}
+
+/* the .icand_msie_td doubles a class of contained class, so we have to disable the inner div */
+  .icand_msie_td .icand_strct_msie_resizingcell
+, .icand_msie_td .icand_strct_inside_msie_td {
+	border:0;
+	padding:0;
+	padding-top:0;
+	margin:0;
+	background-color:transparent;
+/*left:0; /*08oct*/
+/*right:0; /*08oct*/	
+}
+
+.icand_strct_fullheight {
+	height:auto; /* !important; */
+	min-height:100%; 
+}
+
+/* for Internet Explorer */
+* html .icand_strct_fullheight {
+	height:100%;
+}
+
+/* .icand_verticalAlignContainer {vertical-align:bottom;}	not yet used */
+/* .icand_verticalAlignTop {vertical-align:top;}			not yet used */
+.icand_verticalAlignMiddle {vertical-align:middle;}
+
+.icand_floatInput {
+	float:inherit;	/* float:inherit will not work with MSIE7 */
+	display:inline;
+	height:auto;
+}
+
+.icand_guttershading_container {
+	position:relative; /*needed*/
+	height:auto;
+}
+
+.icand_styling_container {position:relative;}
+/* any z-index here pushes everything underneath! bad!! */
+
+
+.icand_over {
+	position:relative; /*NEEDED to position contents inside div*/
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+}
+/*===========*/
+/* container class, sits either side of header & footer. The shading overlay is provided by another class. */
+.icand_guttershading_under_left {
+	position: absolute;
+    bottom: 0;
+    left: -1000px;
+    top: 0;
+    width: 1000px; 
+}
+
+.icand_guttershading_under_right {
+	position: absolute;
+    bottom: 0;
+	left:100%;
+	right:0;
+    top: 0;
+    width: 100%;
+}
+
+/*-------------------------*/
+.icand_guttershading_over {position:relative;}
+.icand_guttershading_under {	position:absolute;}
+/* NEEDED, but provided via another class */
+/*-------------------------*/
+
+html, body {
+/*	width:100%; no width, allows dock to squeeze in */
+	height:100%;
+}
+html, body {
+	margin:0;
+	padding:0;
+	border:0;
+	background:none;
+}
+
+#icand_strct_body { 
+	margin:0;
+	padding:0;
+	border:0;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	width:100%;	/* MSIE7 requires 100%, not "auto" */
+	min-width:600px; /* !!!!!!!!!! */
+	overflow-x:hidden;
+	overflow-y:hidden;	/* 21MAY2012 BUG when not logged in: scroll bar for 10px strip @ bottom */
+}
+
+#page { 
+	margin-top:0;
+	margin-bottom:0;
+	min-height:100%;	/* seems to have no effect. Trying to fill body, for sticky footer */
+	height:auto !important;
+}
+
+#icand_nonfooter {
+	/* sticky footer javascript adds paddingBottom = footer height */
+	min-height:100%;
+}
+
+#page-footer { 
+	/* sticky footer javascript adds margin-top = -height */
+	left:0;
+	right:0; 
+}
+
+	.icand_constrained_width
+,	.icand_over.icand_constrained_width { /* 01Nov2012 2nd case to prevent icand_over overriding */
+	width:980px;
+}
+
+.icand_full_width {
+	width:100%;
+}
+
+/*TYPE2:FIXED MARGINS #page {	width:auto; margin:0 50px;	 padding:0; } */
+
+#page-header { /*core Moodle id*/
+	width:100%;
+	top:0;
+ }
+
+.icand_strct_floatcontainer {
+	/*overflow:hidden; /* !=visible required to shrinkwrap to floated contents */
+/*overflow-y:auto;*/
+/*	overflow:hidden;   CAN'T USE SAFELY: SEE BELOW */
+	*height:100%; /* MSIE6&7 hack */
+	
+	
+	/* !!!!!!!!!!!!! 21May2012 */
+    display:table;
+	table-layout:fixed; /* "fixed" forces table to resize & never overflow */	
+}
+/*------------------------------*/
+/* there's no way in CSS to make a child of an overflow: hidden element 
+show it's contents outside the parent borders, you must change the hierarchy.
+--http://stackoverflow.com/questions/1952344/override-overflowhidden-with-z-index
+*/
+
+.icand_strct_floatcontainer:after {
+   content:".";
+   display:block;
+   height:0;
+   clear:both;
+   visibility:hidden;
+}
+.icand_strct_floatcontainer {display:inline-block;}
+/* Hide from IE Mac \*/
+  .icand_strct_floatcontainer{display:block;}
+/* End hide from IE Mac */
+* html .icand_strct_floatcontainer {height:1px;} /*for IE6 and down*/
+
+/*--------------------- */
+
+
+/* MSIE HACK HACK HACK HACK like ALFRED HITCHCOCK IE for Mac*/
+	/* height:100%; /* !!!!!! MSIE6. fit contents to overflow:hidden */
+/*\*//*/
+.icand_strct_floatcontainer {height:100%;}
+/* */
+
+.icand_strct_boxspacingcontainer{width:auto;}
+
+.icand_strct_tablecontainer {
+    display:table;
+	table-layout:fixed; /* "fixed" forces table to resize & never overflow */
+	width:100%;
+}
+
+/*.icand_textcontainer, /* !!!!!!!!!!! may need different setting !!!!!!!!! */
+/*.icand_dec_padded, */
+ 
+.icand_dec_padded .block ,
+.icand_dec_paddedblock .block	{
+	padding:0; 
+	margin-bottom:10px; /*side padding is made by inserting table cells: "icand_spacer_" */
+} 
+
+/* in main strip: horizontal spacing between cells */
+/*
+.icand_outer_spacer{width:10px;}
+.icand_inner_spacer{width:10px;}
+*/
+
+/* horizontal spacers between blocks & course column */
+.icand_spacer_1 {width:10px;}
+.icand_spacer_2 {width:20px;}
+
+.icand_spacer_1 .icand_inner_spacer_border {
+	width:5px;
+}
+.icand_spacer_2 .icand_inner_spacer_border {
+	width:10px;
+}
+
+.icand_inner_spacer_border {
+	position:absolute; 
+	top:0;
+	bottom:0;
+}
+
+  .icand_inner_spacer
+, .icand_inner_spacer_border 
+, .icand_outer_spacer { 
+	border-width:0;
+}
+
+  .icand_outer_spacer
+, .icand_inner_spacer_border {
+	border-style:solid;
+/*	border-color:red; */
+}
+
+.icand_table_borders_on.icand_spacer_left
+{ 
+	border-left-width:1px;
+}
+
+  .icand_table_borders_on.icand_spacer_right 
+, .icand_table_borders_on.icand_inner_spacer_border{
+	border-right-width:1px;
+}
+
+  .icand_table_borders_on.icand_spacer_left
+, .icand_table_borders_on.icand_spacer_right 
+, .icand_table_borders_on.icand_inner_spacer_border{
+/*	border-color:green; TODO set the colour */
+}
+/*===========================================*/
+.icand_strct_containermainrow  {
+    display:table-row;
+}
+
+.icand_strct_containerrow  {
+    display:table-row;
+}
+
+.icand_strct_containermaincell {display:table-cell;}
+.icand_strct_containercell {display:table-cell;}
+
+.icand_strct_nonbodytablespacing {
+/*	border-spacing:8px 2px; THIS IS A PROBLEM IN ".icand_over" */
+/*	border-spacing:0 2px; */
+}
+
+.icand_text_top {
+	vertical-align:top; /* a bug in FF10?? */
+}
+
+.icand_strct_boxrowcontent {
+	word-wrap:break-word;	/* let unbreakable text break, so it doesn't get hidden */
+	overflow:hidden;
+	height:100%; /* MSIE6. fit contents to overflow:hidden */
+}
+/* ========== spacing between & around main content ================== */
+.icand_strct_boxrowcell {
+	margin:0;
+	padding:0;
+	border:none;
+/*	overflow-x:hidden;  /* NEEDED to prevent ie6,ie7 from resizing td . REMOVED 8Oct*/
+/*	overflow:hidden; /* added by glen 26Sep2012. POSSIBLY needed to stop scrollbars. REMOVED 8Oct */
+}
+/* =========================================================== */
+/* general l/r elements */
+
+.dir-ltr .icand_gen_floater.icand_pre  { float:left;  }
+.dir-ltr .icand_gen_floater.icand_post { float:right; }
+.dir-rtl .icand_gen_floater.icand_pre  { float:right;  }
+.dir-rtl .icand_gen_floater.icand_post { float:left; }
+
+/*.icand_gen_floatermid  { float:left;  } */
+
+.dir-ltr .icand_gen_content.icand_pre  { text-align:left; }
+.dir-ltr .icand_gen_content.icand_post { text-align:right; }
+.dir-rtl .icand_gen_content.icand_pre  { text-align:right; }
+.dir-rtl .icand_gen_content.icand_post { text-align:left; }
+
+/* STOOPID override for "$PAGE->button" */
+.singlebutton { float:inherit;} /* float:inherit DOESN'T WORK IN MSIE7 */
+
+.dir-rtl .icand_gen_floater.icand_pre  .singlebutton { float:right; }
+.dir-rtl .icand_gen_floater.icand_post .singlebutton { float:left;}
+
+.icand_gen_content.icand_mid  { text-align:center; }
+
+.icand_varstruct_widthset_midcell{
+	overflow-x:hidden;
+	overflow-y:hidden;
+	height:100%; /* MSIE6. fit contents to overflow:hidden */
+}
+
+/* override from parent css */
+.block { margin:0; }
+.block_dock_placeholder { height:0; } /*only MSIE puts height on this*/
+
+  .skip-block-to 	/* sidebar span */
+, .skip-block
+, #maincontent		/* @ start of $OUTPUT->main_content */
+{   height:0; 	/* a parent says 1px for skip-block-to */
+	padding:0;
+	margin:0;
+	font-size:0; /* needed for MSIE6 & 7 */
+} 
+
+
+.atBottom {
+	position:absolute; 
+	bottom:0;
+}
+
+.atTop {
+	position:absolute; 
+	top:0;
+}
+
+.atRight {
+	position:absolute; 
+	right:0;
+}
+
+/* DOESN'T WORK FOR TABLE CELLS. ?? PUT border-spacing ON TABLE ?? */
+	.icand_vertical_margin 
+,	.icand_vertical_marginblock .block  {
+	margin-bottom:20px;
+}
+
+/* ======== debugging/development ================== */ 
+/* ================================================= */ 
+.icand_block {
+	display:inline-block;
+	height:1px;
+	width:90%;/*a crappy fix, to help MSIE7 understand "clear:both"*/
+}
+
+.icand_cover_all {
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+ *height:100%; /* HACK for MSIE7. FF ignores it, Safari stretches to PAGE height!!! */
+overflow:hidden;	/* stop absolute positioned graphics leaking outside container */
+}
+
+.icand_front_layer {
+	position:relative;	/* must be positioned to have z-index ?????? */
+}
+
+
+.icand_menucell {
+/*	min-width:200px; */
+	margin: 5px 20px;
+	float:left;
+}
+
+.theme-divider {
+	width:90%;/*MSIE has problems fitting HRs*/
+}
+
+.icand_menucell_specialrights {
+	background:black;
+	color:#fff;
+}
+
+/* the shaded wings of the header */
+#icand_cover_shade {
+	height:100%;
+	width:100%;
+	position:absolute;
+	background:black;
+}
+
+
+.form-twodimensionmulticheckbox {
+	border-collapse: collapse;
+}
+
+.form-twodimensionmulticheckbox td {
+    border-spacing: 2px;
+	padding: 0.2em;
+	margin: 0 auto; 
+	text-align: center;
+	width:5%;
+}
+
+/* adminsettings: used in popup override & site admin page for theme */
+
+  #adminsettings .form-item .form-label { /*.form-item is needed to override base theme rule */
+	font-weight:bold;
+	display:inline;
+	text-align:left;
+	float:none;
+	line-height:200%;
+}
+
+  #adminsettings .form-item  .form-label .form-shortname {/*nested in form-label*/
+	font-weight:normal;
+	display:inline;
+	text-align:right;
+	padding-left:3em;
+}
+
+  #adminsettings .form-item  .form-setting
+, #adminsettings .form-item  .form-description
+{
+	margin-left:9%;/*wipe out base sheet = admin 13.5em */
+	width:90%
+}
+
+/* ************** HACK LAND STARTS HERE *****************/
+.course-content ul.topics li.section .content {
+	margin: 0;	/*override 40px L+R */ 
+}
+
+.path-backup .mform .grouped_settings.section_level .normal_setting {
+/*  override:  margin: 0 0 0 50%; width: 50%; */
+	width: 20%;
+	float: left;
+	margin: 0;
+}
+
+.normal_setting {
+	width:30%; /* override the 50% */
+}
+
+/************* MSIE MSIE MSIE MSIE MSIE MSIE MSIE MSIE ******************/
+
+.grouped_settings.activity_level { 	
+	/* there are a sneaky bugs in course Backup>2.Schema settings. 
+		1. all the DIVs cause MSIE7 to make a massive horizontal width (>500K pixels). Making them inline fixes this.
+		2. there is also a missing close div for <div class="fcontainer clearfix"> which should be just before the 
+			</fieldset> before the </form> that closes id="mform2".
+	*/
+	display:inline; 
+}
+
+/*.icand_decoration_layer {z-index:-1;}
+.icand_gen_content{ position:relative;}*/
+
+/* MSIE7 HACK: a new "stacking context" is started for each positioned element, stopping inheritence of z-index */
+/*#page-header{*z-index:8;}
+#id_header1{*z-index:7;}
+#id_header2{*z-index:6;}
+#id_header3{*z-index:5;}
+#icand_id_innerheader{*z-index:4;}
+#id_toolbar1{*z-index:3;}
+#id_toolbar2{*z-index:2;}
+#page-content{*z-index:1;}
+#page-footer{*z-index:0;} 		changed 12Oct2012 */
+
+
+#page-header{*z-index:3;}
+#icand_id_innerheader{*z-index:2;}
+#page-content{*z-index:1;}
+#page-footer{*z-index:0;}		/* introduced 12Oct2012 */
+
+/* the following HACKS required, because float:inherit will not work with MSIE7 */
+.dir-ltr .icand_gen_floater.icand_post	.icand_floatInput {float:right;}
+.dir-rtl .icand_gen_floater.icand_post	.icand_floatInput { float:left;}
+.dir-ltr .icand_gen_floater.icand_pre	.icand_floatInput { float:left;}
+.dir-rtl .icand_gen_floater.icand_pre	.icand_floatInput { float:right;}
+
+.icand_over {
+	height:100%; /* HACK for MSIE7 */	
+	width:100%; /* HACK for MSIE7 */	
+}
+
+#region-main { /*NEEDED for MSIE7, so it can calculate width for contents*/
+	width:100%;
+}
+
+.icand_over table.icand_msie_table {
+    width: 100% !important;
+}
+
+/* get rid of phantom vertical scroll -- MSIE8 in iE7 mode */
+*+html #icand_id_region-main-box_container {
+	overflow-x:hidden;
+	overflow-y:hidden;
+}
+
+.icand_floatInput {
+	zoom:1; 		/* a HACK to make MSIE7 float correctly when width:auto */
+	clear:none;
+}
+
+.icand_gen_content {
+	padding: 5px 10px;
+}
+.icand_st_content.icand_nomargin{ /* for graphic logos */
+	margin:0;
+}
+
+/* fixes MSIE "stepdown" between adjacent floats */
+	.icand_gen_floater.icand_post
+,	.icand_gen_floater.icand_pre {
+	line-height:0;
+}
+
+/* reverse line-height:0 for divs inside floater_* */
+.icand_floatInput {
+	line-height:100%;
+}
+
+/* there are complications with the DOCK. Blocks cell/s in main_strip have to disappear when all blocks are docked. */
+  #region-main-box	/* overrides .icand_strct_tablecontainer */
+{
+	table-layout:auto!important; /* must be AUTO so block column collapses if all blocks docked */
+	width:100%; 
+}
+
+ #region-main-box_ietab { /*8Oct*/
+	width:100%;  /* needed, e.g. to centre login prompt on login page */
+/*	left:0;
+	right:0;	*/
+}
+
+#icand_id_region-main-box_container {
+	overflow-x:auto; /* sadly, authors may make content too big. This puts x-scroll if region-main-box too wide. */
+}
+
+/* =====================*/
+/* main content:widths */
+/* ---------------------*/
+
+/* set width of blocks (i.e. in side columns) */
+  .icand_varstruct_widthset_sidecell .block 
+, .icand_varstruct_widthset_sidecell .blockmovetarget
+, .icand_varstruct_widthset_sidecell .blockannotation
+
+{
+	width:220px;	
+}
+
+/* WHEN the flexi-width main content doesn't fill the width 
+   e.g. "/my", then the column widths of sidebars take up the remaining space. 
+	
+*/
+.icand_varstruct_widthset_sidecell {
+	width:1px; /*10oct2012 FF treats this as min-width. But MSIE7 forces it. % is OK */
+	/* hack to make cell shrinkwrap if table not full width. (Min-width doesn't work on table cells per CSS2.1) */ 
+	/*display:-moz-inline-stack;
+	display:inline-block;*/
+/* the following 2 lines are MSIE hacks, to make the cell not shrink its contents 
+   MSIE still centres content if only 1 cell contains data.
+*/
+zoom:1;
+*display:inline;
+}
+
+
+*+html .icand_varstruct_widthset_sidecell {	/* 08Oct2012 MSIE7 only, this makes cells resize. But IE8 applies it literally, so the mad selector targets just IE7 */
+		width:0.01%;
+}
+
+.icand_msie_td .icand_strct_inside_msie_td.icand_varstruct_widthset_sidecell {
+	width:auto;
+}
+
+/* =====================*/
+/* Overrides for course settings page */
+/* Kerrin */
+/* ---------------------*/
+#page-admin-setting-themesettingicand #adminsettings .form-item{
+	display:block;
+	/*border-bottom: dotted 1px #CCC;*/
+	padding-bottom:7px;
+}/*border separating each item*/
+
+#page-admin-setting-themesettingicand #adminsettings h3{
+	border-top: solid 2px #666;
+	border-bottom: solid 2px #666;
+	padding: 12px 0 12px 0;
+	font-size:1.45em;
+	font-weight:bold;
+	margin-top:25px;
+}
+#page-admin-setting-themesettingicand #adminsettings hr{
+	display:none;
+}
+#page-admin-setting-themesettingicand #adminsettings .form-item h4{
+	border-top: solid 1px #666;
+	padding: 10px 0 15px 0;
+}
+
+#page-admin-setting-themesettingicand #adminsettings .form-item .form-setting table h4,
+#page-admin-setting-themesettingicand #adminsettings .form-item .form-setting table p{
+	border-top: none;
+	padding: 0;
+	font-size:100%;
+}/*overrides the h4 and p styling for the tables*/
+
+#page-admin-setting-themesettingicand #adminsettings .form-item .form-label{
+	line-height:170%;
+	display:block;
+	width:auto;
+}/*form-label, including label and shortname*/
+	
+	#page-admin-setting-themesettingicand #adminsettings .form-item .form-label label{
+		padding-right:15px;
+	}/*"subheadings"*/
+	
+	#page-admin-setting-themesettingicand #adminsettings .form-item .form-label span.form-shortname{
+		font-size:85%;
+		display:inline-block;
+		padding-left:0;
+		float:right;
+	}
+
+#page-admin-setting-themesettingicand #adminsettings .form-item .form-setting{
+	padding-top:6px;
+	margin-left:30px;
+}/*form-setting, including form-field and defaultinfo*/
+
+	#page-admin-setting-themesettingicand #adminsettings .form-item .form-setting .form-defaultinfo{
+		font-size:85%;
+		display:block;
+		padding-top:3px;
+	}
+
+	#page-admin-setting-themesettingicand #adminsettings .form-item .form-setting table td,
+	#page-admin-setting-themesettingicand #adminsettings .form-item .form-setting table th{
+		text-align:left;
+		vertical-align:top;
+		padding:4px 4px 4px 8px;
+	}
+	
+	#page-admin-setting-themesettingicand #adminsettings .form-item .form-setting iframe{
+		border:solid 1px #666;
+	}
+#page-admin-setting-themesettingicand #adminsettings .form-item .form-description{
+	margin-left:30px;
+}/*form-description, */
+
+
+#page-admin-setting-themesettingicand #adminsettings fieldset .formsettingheading ol{
+	padding-left:20px;
+}

@@ -1,0 +1,179 @@
+/**
+ * Licence 
+ * 
+ * This software is distributed under the terms and conditions of the GNU General Public Licence, v 3 (GPL). 
+ * The complete terms and conditions of the GPL are available at http://www.gnu.org/licenses/gpl-3.0.txt
+ * 
+ * Copyright Notice 
+ *
+ * Copyright © NSW Technical and Further Education Commission (TAFE NSW), TAFE eLearning Hub 2012 
+ *
+ * Acknowledgements
+ * - Renee Lance, project manager and lead designer 
+ * - Glen Byram, lead programmer
+ *
+ * Created:01Jun2012 - Renee Lance TAFE eLearning Hub
+ * Modified: 20Jun2012 - Renee Lance TAFE eLearning Hub
+ *		08Aug2012 - Glen Byram :removed z-indices in 2 places
+ *		09Aug2012 - Glen Byram : 4 changes to stop overlaps of the submenu 
+ *					.tabtree when in "template" mode
+ *		11Oct2012 - Glen Byram : replace some iCan.D. ids with default Moodle ids
+ */
+
+/*-------------------"DATABASE" ------------------*/
+#region-main-box .course-content .database_wrapper{
+	border:solid #d7d7d7 1px;
+	background-color:#FFF;
+	margin: 0 0 20px 0;
+	padding:20px;
+	width:93%;
+}
+#page #page-content .database_wrapper h2.main{
+  margin-left:0;
+}
+/**** Database Tab styles ****/
+
+.tabtree {
+	position: relative;
+	margin: 0 0 0 10px;
+	padding:0;
+	display:block;
+	margin-bottom: 3.5em; /* added by glen 09/08/2012. To allow submenu below */
+	}
+	
+#region-main .tabtree {
+	margin-bottom: 3.5em; /* added by glen 09/08/2012. Undo redundant style in icand_content_spacing.css */
+}
+	
+#region-main-box .course-content .tabtree ul.tabrow0{
+	margin:0;
+	}
+/*---------------------TAB ROW 0 --------------------*/	
+#region-main-box .course-content .tabtree ul.tabrow0 {
+	text-align: left; 
+	width: 99%; 
+	margin: 0 0 0 5px;
+	padding:0;
+	display:block;
+	}	
+.course-content .tabtree ul.tabrow0 li {
+	margin:0;
+	margin-right: -4px;
+	
+	}
+
+.tabtree .tabrow0 li.here a.nolink{
+  }
+.tabtree .tabrow0 li a{
+	background-image: url([[pix:theme|tab/left]]);
+	background-repeat: no-repeat; 
+	background-position: left top;
+	text-decoration:none;
+	padding:0px 0 0 12px;
+	display:inline-block;
+	height:37px;
+	width:auto;
+	}	
+.tabtree .tabrow0 li a span {
+	background-image: url([[pix:theme|tab/right]]); 
+	background-repeat: no-repeat; 
+	background-position: right top; 
+	padding:10px 10px 0 0;
+	display:inline-block;
+	height:27px;
+	width:auto;
+	color:#444;
+	}
+/*----- active"here" states for tabrow0-------*/	
+	.tabtree .tabrow0 li.here a {
+	background-image: url([[pix:theme|tab/left_active]]);
+	position: relative; 
+	/*z-index: 102;*/
+	/*background-color:#FF0;*/
+	}	
+	.tabtree .tabrow0 li.here a span{
+	background-image: url([[pix:theme|tab/right_active]]);
+	color:#112143;
+	text-decoration:underline;
+	}
+/*----- hover states for tabs-------*/
+.tabtree .tabrow0 li a:hover {
+	background-image: url([[pix:theme|tab/left_hover]]);
+	color:#B74614;
+	}
+.tabtree .tabrow0 li a:hover span {
+	background-image: url([[pix:theme|tab/right_hover]]);
+	color:#B74614;
+	}
+/*----- active"here" HOVER states for tabrow0-------*/
+.tabtree .tabrow0 li.here a:hover {
+	background-image: url([[pix:theme|tab/left_active_hover]]);
+	color:#B74614;
+	}
+.tabtree .tabrow0 li.here a:hover span {
+	background-image: url([[pix:theme|tab/right_active_hover]]);
+	color:#B74614;
+	}
+/*---------------------TAB ROW 1 --------------------*/	
+.tabtree .tabrow0 .tabrow1 {
+  display:block;
+  margin:0 0 0 5px;
+  width: 97.5%;
+  left:0;
+  background-color:#FFF;
+  border:solid 1px #CCC;
+/*  padding:57px 0 30px 14px; removed by glen 09Aug2012 */
+}
+.tabtree ul.tabrow0 li ul.tabrow1 li a{
+	background-image: none;
+	padding: 5px 0 0 0;
+	background-color:#FFF;
+	height:25px;
+}
+.tabtree ul.tabrow0 li ul.tabrow1 li a span {
+	background-image: none;	
+	height:20px;
+	border-right: solid 1px #999;
+	padding:0px 5px 3px 5px;
+	color:#444;
+	text-decoration:none;
+	font-size:95%;
+}
+/*----- active"here" states for tabrow1-------*/
+.tabtree ul.tabrow0 li ul.tabrow1 li.here a {
+	position: relative; 
+	/*z-index: 102;*/
+	/*background-color:#0F6;*/
+	}
+.tabtree ul.tabrow0 li ul.tabrow1 li.here a span{
+	color:#112143;
+	text-decoration:underline;
+	margin-right:4px;
+}
+/*----- hover states for tabrow1-------*/
+.tabtree ul.tabrow0 li ul.tabrow1 li a:hover {
+	background-image: none;
+	color:#B74614;
+	}
+.tabtree ul.tabrow0 li ul.tabrow1 li a:hover span {
+	background-image: none;
+	color:#B74614;
+	}
+
+.groupmanagementtable {width: 90%;}
+.groupmanagementtable td {vertical-align: top; border-width: 0px;}
+.groupmanagementtable td p {margin: 0px;}
+
+.littleintro{
+/*  position:absolute;
+  top:100px;
+  left:5px; 
+  margin:7px 0 0 20px;  removed by glen 09Aug/2012 */
+  margin-bottom: 0.5em; /* added by glen 09Aug2012 */
+text-align:left !important;	/* override a STUPID INLINE style. change by glen 09Aug2012 */
+}
+.clearer{
+	height:0px;
+}
+
+/*-----------------end database-----------------*/

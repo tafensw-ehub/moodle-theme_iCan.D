@@ -1,0 +1,279 @@
+/**
+ * Licence 
+ * 
+ * This software is distributed under the terms and conditions of the GNU General Public Licence, v 3 (GPL). 
+ * The complete terms and conditions of the GPL are available at http://www.gnu.org/licenses/gpl-3.0.txt
+ * 
+ * Copyright Notice 
+ *
+ * Copyright © NSW Technical and Further Education Commission (TAFE NSW), TAFE eLearning Hub 2012 
+ *
+ * Acknowledgements
+ * - Renee Lance, project manager and lead designer 
+ * - Glen Byram, lead programmer
+ *
+ * Created:01/06/12 - Renee Lance TAFE eLearning Hub
+ * Modified: 20/06/12 - Renee Lance TAFE eLearning Hub
+ * 				11Oct2012 - Glen: reduced #region-main .course-content to .course-content
+/*/
+
+/*/=================================Site course and category links==================/*/
+.categorybox{
+	margin-bottom:20px;	
+	width:95%;
+	}
+.categorypicker,
+#coursesearch2{
+	margin-bottom:20px;
+	padding-top:20px;
+	border-top:1px dotted #999999;
+	width:99%;
+	display:block;
+	}
+#coursesearch2{
+	text-align:right;
+	}
+/*/-----------------Available courses Styling------------------------/*/
+.course-content ul.unlist{
+	padding:0;
+	margin:0;
+	width:95.5%;
+	}
+.course-content ul.unlist li{
+	list-style:none;
+	margin:0;
+	padding:0;
+	}
+.course-content ul.unlist li .coursebox{
+	margin:0;
+	padding:0;
+	}
+.course-content ul.unlist li .coursebox .info, 
+.course-content ul.unlist li .coursebox .info h3{
+	width:100%;
+	display:block;
+	margin:0;
+	padding:0;
+	}
+.course-content ul.unlist li a,
+.course-content ul.unlist li a:link,
+.course-content ul.unlist li a:active,
+.course-content ul.unlist li a:visited{
+	font-size:70%;
+	color:#000;
+	font-weight:bold;
+	text-decoration:none;
+	padding:6px 10px 6px 25px;
+	background-color:#f4f4f4;
+	background:transparent  url([[pix:theme|CategoryListBGR]]) no-repeat top left;
+	width:98.2%;
+	display:block;
+	border-bottom:1px solid #aeaeae;
+	margin:2px 0 0 0;
+	}
+.course-content ul.unlist li a:hover,
+.course-content ul.unlist li a:focus{
+	background:transparent url([[pix:theme|CategoryListBGRO]]) no-repeat top left;
+	color:#000000;
+	}
+
+/*/-----------------Counter styling for the site News link in a block------------/*/
+.course-content .block ul.unlist li{
+	background-image:none;
+	background-color:transparent;
+	border:0;
+	margin:0;
+}
+.course-content .block ul.unlist li .column a,
+.course-content .block ul.unlist li .column a:link,
+.course-content .block ul.unlist li .column a:visited,
+.course-content .block ul.unlist li .column a:active,
+.course-content .block ul.unlist li .column li a:hover,
+.course-content .block ul.unlist li .column a:focus{
+	background:transparent;
+	border:0;
+	margin:0;
+	padding:0;
+	display:block;
+	width:100%;
+}
+/*---------First level category link styles----------*/
+.course-content .categorylist .category{
+	padding:0;
+	margin:0;
+	position: relative;
+	}
+.course-content .categorylist .category a,
+.course-content .categorylist .category a:link
+.course-content .categorylist .category a:visited,
+.course-content .categorylist .category a:active{
+	font-size:0.9em;
+	color:#000;
+	font-weight:bold;
+	text-decoration:none;
+	padding:6px 10px 6px 30px;
+	background:transparent url([[pix:theme|CategoryListBGR]]) no-repeat top left;
+	width:98.7%;
+	display:block;
+	border-bottom:1px solid #aeaeae;
+	margin-top:2px;	
+	}
+.course-content .categorylist .category a:hover,
+.course-content .categorylist .category a:focus{
+	background:transparent url([[pix:theme|CategoryListBGRO]]) no-repeat top left;
+	}
+/*---------Subcategory link styles----------*/
+.course-content .categorylist .category .indentation{
+	/*Place display none to delete second level for category links on home page*/
+	display:block;
+	padding:0;
+	margin:0;
+	position: relative;
+	border-bottom::0;
+	width:98.6%;
+	}
+.course-content .categorylist .category .indentation a,
+.course-content .categorylist .category .indentation a:link,
+.course-content .categorylist .category .indentation a:active,
+.course-content .categorylist .category .indentation a:visited{
+	position: relative;
+	margin-top:0;
+	color:#000000;
+	background-image:none;
+	background:transparent url([[pix:theme|BulletIcon01]]) no-repeat 27px 8px;	
+	padding-left:40px;
+	font-weight:normal;
+	}
+.course-content .categorylist .category .indentation a:hover,
+.course-content .categorylist .category .indentation a:focus{
+	color:#1685B5;
+	text-decoration:underline;
+	}
+span.numberofcourse{
+	position:absolute;
+	right: 4px;
+	top:5px;
+	display:block;
+	font-size:0.8em
+	}
+.course-content .categorylist .category .indentation  span.numberofcourse{
+	right: 0px;
+	}
+/*/--------------------Course list tree styles----------------/*/
+.course-content .course_category_tree{
+	margin-bottom:20px;
+	width:98%;
+	display:block;
+	padding:10px;
+	}
+.course-content .course_category_tree .category .category_label{
+	border-bottom:1px solid #aeaeae;
+	margin-top:2px;
+	background-position:left 8px;
+	padding-left:5px;	
+	}
+.course-content .course_category_tree .subcategories .category_label{
+	border-bottom:none;
+	background-position:15px 8px;		
+	}
+.course-content .course_category_tree .category .courses{
+	border-bottom:none;
+	}
+.course-content .course_category_tree .subcategories .category{
+	padding:0;
+	margin:0;
+	}
+.course-content .course_category_tree .subcategories .category .category_label{
+	background-image:none;
+	border-bottom:1px dotted #BEBEBE;
+	}
+.course-content .course_category_tree .subcategories .category .category_label a{
+	background:transparent url([[pix:theme|BulletIcon01]]) no-repeat 0 7px;
+	padding-left:15px;
+	margin:0;
+	}
+.course-content .course_category_tree .category a,
+.course-content .course_category_tree .category a:link,
+.course-content .course_category_tree .category a:active,
+.course-content .course_category_tree .category a:visited,
+.course-content .course_category_tree .category a:hover,
+.course-content .course_category_tree .category a:focus{
+	font-size:1.1em;
+	color:#000000;
+	font-weight:bold;
+	text-decoration:none;
+	padding:6px 10px 6px 0px;
+	display:block;
+	}
+.course-content .course_category_tree .category .subcategories a,
+.course-content .course_category_tree .category .subcategories a:link,
+.course-content .course_category_tree .category .subcategories a:active,
+.course-content .course_category_tree .category .subcategories a:visited{
+	font-size:1em;
+	}
+.course-content .course_category_tree .subcategories a,
+.course-content .course_category_tree .subcategories a:link{
+	padding-left:27px;	
+	font-weight:normal;
+	}
+.course-content .course_category_tree .category .courses .course a,
+.course-content .course_category_tree .category .courses .course a:link,
+.course-content .course_category_tree .category .courses .course a:active,
+.course-content .course_category_tree .category .courses .course a:visited,
+.course-content .course_category_tree .category .courses .course a:hover,
+.course-content .course_category_tree .category .courses .course a:focus{
+	background:transparent url([[pix:theme|BulletIcon01]]) no-repeat 0 7px;
+	padding-left:15px;
+	display:inline-block;
+	margin-left:5px;
+	font-weight:normal;
+	color:#000;
+	font-size:1em;	
+	}
+.course{
+	position:relative;
+	}
+.course-content .course_category_tree .category .courses .course{
+	clear:both;
+	padding-right:120px;	
+	border-bottom:1px dotted #BEBEBE;
+	}	
+.course-content .course_category_tree .category .courses .course .course_info{
+	position:absolute;
+	top:5px;
+	right:0;
+	display:block;
+	font-size:0.8em;
+	width:100px;
+	background:none;
+	padding:0;
+	text-align:right;
+	}
+.course-content .course_category_tree .category .courses .course .course_info a{
+	background-image:none;
+	padding:0;
+	}
+.controls{
+	margin-top:10px;
+	padding:10px 0 20px 0;
+	border-bottom:1px solid #E1E1E1;	
+	}
+.expandall{
+	font-size:0.9em;
+	color:#575757;
+	font-weight:bold;
+	margin-right:10px;
+	border-right:1px solid #575757;
+	padding:5px 10px;
+	width:100px;
+	display:inline;
+	}
+.collapseall{
+	font-size:0.9em;
+	color:#575757;
+	font-weight:bold;
+	padding:5px 0;
+	width:100px;		
+	display:inline;
+	}
+/*-----------------MyHome course list------------------------------*/

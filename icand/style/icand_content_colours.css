@@ -1,0 +1,447 @@
+/**
+ * Licence 
+ * 
+ * This software is distributed under the terms and conditions of the GNU General Public Licence, v 3 (GPL). 
+ * The complete terms and conditions of the GPL are available at http://www.gnu.org/licenses/gpl-3.0.txt
+ * 
+ * Copyright Notice 
+ *
+ * Copyright © NSW Technical and Further Education Commission (TAFE NSW), TAFE eLearning Hub 2012 
+ *
+ * Acknowledgements
+ * - Renee Lance, project manager and lead designer 
+ * - Glen Byram, lead programmer
+ *
+ * Created:01Jun2012 - Renee Lance TAFE eLearning Hub
+ * Modified by: 20Jun2012 - Renee Lance TAFE eLearning Hub
+ *		09Aug2012 - Glen added "homelink"
+ * 		11Oct2012 - Glen consolidated duplicates, removed redundants, added fg_colour light/dark distinctions especially for
+ *						YUI menus and headings.
+ *		15Oct2012 - Glen added the "dimmed" rules
+ */
+
+/*/=============================Containers============================/*/
+.course-content #urlintro
+{
+	border:1px solid #d7d7d7;
+	background-color:#ffffff;/*Mark out for option to modify*/
+}
+/*------------------------------Section li 0 colours------------------------------*/
+	.course-content ul.topics	li#section-0
+,	.course-content ul.weeks		li#section-0
+,	.course-content ul.topics	li#section-0 div.content
+,	.course-content ul.weeks		li#section-0 div.content
+{
+	background-color:transparent;
+}
+
+
+/*/=================================Link styles========================/*/
+/*#region-main-box*/.icand_d_fg_clr_dark a			,
+/*#region-main-box*/ .icand_d_fg_clr_dark a:link		,
+/*#region-main-box*/ .icand_d_fg_clr_dark a:active
+{
+	color:#214A75;/*Mark out for option to modify*/
+}
+/*#region-main-box*/ .icand_d_fg_clr_dark a:visited
+{
+	color:#575757;/*Mark out for option to modify*/
+}
+/*#region-main-box*/ .icand_d_fg_clr_dark a:hover	,
+/*#region-main-box*/ .icand_d_fg_clr_dark a:focus
+{
+	color:#000000;/*Mark out for option to modify*/
+}
+
+/*#region-main-box*/ .icand_d_fg_clr_light a			,
+/*#region-main-box*/ .icand_d_fg_clr_light a:link	,
+/*#region-main-box*/ .icand_d_fg_clr_light a:active
+{
+	color:#a1cAf5;/*Mark out for option to modify*/
+}
+/*#region-main-box*/ .icand_d_fg_clr_light a:visited
+{
+	color:#a7a7a7;/*Mark out for option to modify*/
+}
+/*#region-main-box*/ .icand_d_fg_clr_light a:hover	,
+/*#region-main-box*/ .icand_d_fg_clr_light a:focus
+{
+	color:#ffffff;/*Mark out for option to modify*/
+}
+
+/* added 15Oct2012. dimmed used to reveal activities which are hidden from students, e.g. conditional activities */
+
+	.path-course-view  .icand_d_fg_clr_dark .availabilityinfo
+,	.path-course-view  .icand_d_fg_clr_dark .availabilityinfo strong	
+,	.icand_d_fg_clr_dark a.dimmed
+, 	.icand_d_fg_clr_dark a.dimmed:link
+, 	.icand_d_fg_clr_dark a.dimmed:visited
+,	.icand_d_fg_clr_dark a.dimmed_text
+, 	.icand_d_fg_clr_dark a.dimmed_text:link
+,	.icand_d_fg_clr_dark a.dimmed_text:visited
+,	.icand_d_fg_clr_dark .dimmed_text
+, 	.icand_d_fg_clr_dark .dimmed_text a
+, 	.icand_d_fg_clr_dark .dimmed_text a:link
+,	.icand_d_fg_clr_dark .dimmed_text a:visited 
+, 	.icand_d_fg_clr_dark .usersuspended
+, 	.icand_d_fg_clr_dark .usersuspended a
+, 	.icand_d_fg_clr_dark .usersuspended a:link
+,	.icand_d_fg_clr_dark .usersuspended a:visited 
+, 	.icand_d_fg_clr_dark .dimmed_category
+,	.icand_d_fg_clr_dark .dimmed_category a 
+{
+    color:#555;
+}
+
+.path-course-view  .icand_d_fg_clr_dark .availabilityinfo strong	/*base theme changes the colour*/
+{
+	color:#222;
+}
+
+	.path-course-view  .icand_d_fg_clr_light .availabilityinfo
+,	.icand_d_fg_clr_light a.dimmed
+, 	.icand_d_fg_clr_light a.dimmed:link
+,	.icand_d_fg_clr_light a.dimmed:visited
+,	.icand_d_fg_clr_light a.dimmed_text
+, 	.icand_d_fg_clr_light a.dimmed_text:link
+,	.icand_d_fg_clr_light a.dimmed_text:visited
+,	.icand_d_fg_clr_light .dimmed_text
+, 	.icand_d_fg_clr_light .dimmed_text a
+, 	.icand_d_fg_clr_light .dimmed_text a:link
+,	.icand_d_fg_clr_light .dimmed_text a:visited 
+, 	.icand_d_fg_clr_light .usersuspended
+, 	.icand_d_fg_clr_light .usersuspended a
+, 	.icand_d_fg_clr_light .usersuspended a:link
+,	.icand_d_fg_clr_light .usersuspended a:visited 
+, 	.icand_d_fg_clr_light .dimmed_category
+,	.icand_d_fg_clr_light .dimmed_category a 
+{
+    color:#ccc;
+}
+
+.path-course-view  .icand_d_fg_clr_light .availabilityinfo strong	/*base theme changes the colour*/
+{
+	color:#ddd;
+}
+
+/*************************************************/
+
+/* redundant
+#page-content a,
+#page-content a:link,
+#page-content a:active{
+	color:#214A75;
+}
+#page-content a:visited{
+	color:#575757;
+}
+#page-content a:hover,
+#page-content a:focus{
+	color:#000000;
+}
+*/
+
+.course-content ul.topics li 
+{
+	/*border: 1px solid #CCC;	Mark out for colour  change*/
+}
+
+/*/////////////////////////////////Heading Styles////////////////////////////////*/
+	.icand_d_fg_clr_dark .course-content h1 
+,	.icand_d_fg_clr_dark .course-content ul.topics li div.content h1
+,	.icand_d_fg_clr_dark .course-content #intro h1
+,	.icand_d_fg_clr_dark .course-content h2				/*H2 style for Module pages as first heading on page */
+,	.icand_d_fg_clr_dark .course-content h2#pageheading 	/*heading style h2 for HTML page as first heading on page*/
+{ 
+/*	color: #000000; 	this is default, so no rule required */
+}
+
+	.icand_d_fg_clr_dark .course-content .box h2			/*heading style h2 for html page inside area content*/
+,	.icand_d_fg_clr_dark .course-content ul.topics li div.content h2		/*heading style h2 for topic content*/
+,	.icand_d_fg_clr_dark .course-content ul.weeks li div.content h2
+,	.icand_d_fg_clr_dark .course-content h6
+,	.icand_d_fg_clr_dark .modified
+,	.icand_d_fg_clr_dark .course-content #intro.generalbox .no-overflow h2		/*Social format styles*/
+,	.icand_d_fg_clr_dark .course-content .forumpost .row .no-overflow h2		/*Social format styles*/
+{
+	color: #575757;
+}
+
+	.icand_d_fg_clr_light .course-content .box h2			/*heading style h2 for html page inside area content*/
+,	.icand_d_fg_clr_light .course-content ul.topics li div.content h2		/*heading style h2 for topic content*/
+,	.icand_d_fg_clr_light .course-content ul.weeks li div.content h2
+,	.icand_d_fg_clr_light .course-content h6
+,	.icand_d_fg_clr_light .modified
+,	.icand_d_fg_clr_light .course-content #intro.generalbox .no-overflow h2		/*Social format styles*/
+,	.icand_d_fg_clr_light .course-content .forumpost .row .no-overflow h2		/*Social format styles*/
+{
+	color: #a7a7a7;									
+}
+
+/*/----Glossary heading---------/*/	
+	.icand_d_fg_clr_light .course-content #intro h1	
+,	.icand_d_fg_clr_light .course-content h2#pageheading		/*heading style h2 for HTML page as first heading on page*/
+,	.icand_d_fg_clr_light .course-content h2.headingblock	/*heading style h2 for Topics page*/
+{
+	border-bottom:1px dotted #999999;
+}
+
+
+
+/*-----------Heading 3 styles-----------------*/
+.icand_d_fg_clr_light .course-content h3 
+{
+	 /*color: #214A75;Mark out for colour  change*/
+}
+/*-----------Heading 4 styles-----------------*/
+.icand_d_fg_clr_light .course-content h4 
+{
+}
+
+/*-----------Heading 5 styles-----------------*/
+.course-content .icand_d_fg_clr_light h5 
+{
+	/*color: #214A75; Mark out for colour  change*/
+}
+
+/*/====================Topic Header styles=====================/*/
+.icand_d_fg_clr_dark .course-content ul.topics li .left 
+{
+	color:#7C7C7C; /*Mark out for colour  change*/
+	border-right:1px solid #d7d7d7;
+}
+
+.icand_d_fg_clr_light .course-content ul.topics li .left 
+{
+	color:#9C9C9C; /*Mark out for colour  change*/
+	border-right:1px solid #d7d7d7;
+}
+
+
+	.icand_d_fg_clr_light .course-content ul.topics li div.content h3.sectionname
+,	.icand_d_fg_clr_light .course-content ul.weeks li div.content h3.weekdates
+{
+	/*color:#214A75; Mark out for colour  change*/
+	border-bottom:1px dotted #999999;
+	padding-top:5px;
+	}
+	.icand_d_fg_clr_light .course-content ul.topics li#section-0 div.content h3.sectionname
+,	.icand_d_fg_clr_light .course-content ul.weeks li#section-0 div.content h3.sectionname
+{
+/*	color: #000000;	color: #000000; removed by glen 4Jun2012*/
+	border-bottom:1px dotted #999999;
+}
+	
+.icand_d_fg_clr_dark .block .header{
+	background-color:#f6f6f6;
+}
+
+.icand_d_fg_clr_light .block h2{
+	/*color:#25315A; Mark out for colour  change*/
+}
+
+
+/*/====================Topics/weeks activity styles=====================/*/
+.course-content ul.topics li#section-0 div.content ul li.activity,
+.course-content ul.weeks li#section-0 div.content ul li.activity{
+	background-image:none;
+	border-bottom:1px dotted #999999;
+	background-color:transparent;	
+}
+
+.course-content ul.topics li div.content ul li.activity,
+.course-content ul.weeks li div.content ul li.activity{
+	border-bottom:1px dotted #999999;
+	background-image:none;
+	background-color:transparent;
+	
+}
+
+/*/--------------------Block border colour override-------------------*/
+.icand_d_bg_clr_light, 
+.icand_d_bg_clr_lightblock .block, 
+.icand_d_bg_clr_lightsection .section.main {
+    border-color: #272727;
+}
+
+.icand_d_bg_clr_dark, 
+.icand_d_bg_clr_darkblock .block, 
+.icand_d_bg_clr_darksection .section.main {
+    border-color: #d7d7d7;
+}
+/*/--------------------END Block border colour overide-------------------*/
+
+/*/============================block header styles================/*/
+.icand_d_fg_clr_light .course-content .block .header{
+	background-color:transparent;
+	border-bottom:1px dotted #999999;
+}
+
+.icand_d_fg_clr_dark .course-content .block .header{
+	background-color:transparent;
+	border-bottom:1px dotted #555555;
+}
+
+.icand_d_fg_clr_light .course-content .block h2{
+/*	color:#fffff; */
+}
+
+/*/==================================Page content utilites styles======================/*/
+.icand_d_fg_clr_light .modified{
+	border-top:1px dotted #d7d7d7;
+}
+
+.icand_d_fg_clr_dark .modified{
+	border-top:1px dotted #272727;
+}
+
+/* added by glen, 8Aug2012 */
+#page-footer .homelink a {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+#page-footer .homelink {
+	margin: 0;/*override base*/
+}
+.homelink a {
+	/* makes a button-like box */
+    border-color: #CECECE #4A4A4A #4A4A4A #CECECE;
+    border-style: solid;
+    border-width: 1px 3px 3px 1px; /*fake drop-shadow*/
+/*    color: #000000; */
+    text-decoration: none;
+}
+
+.homelink a:hover {
+    border-color: #4A4A4A #CECECE #CECECE #4A4A4A;
+    border-style: solid;
+    border-width: 3px 1px 1px 3px;
+    text-decoration: none;
+}
+
+/*/===YUI menus===========================================/*/
+/* (swap [dark] & [light] in context:
+- INACTIVE items have [dark] background, [light] text
+- ACTIVE items with submenus have [medium] background, [light] text
+- ACTIVE clickable items [light] background, [dark] text
+- borders have same darkness/lightness polarity as default text
+*/
+
+	a.yui3-menu-label
+,	a.yui3-menu-label :link
+,	a.yui3-menu-label:active
+,	a.yui3-menu-label:visited 
+{
+	background-color:transparent;
+}
+
+/*
+	.yui3-menu.custom_menu_submenu .yui3-menu-content .yui3-menuitem a.yui3-menuitem-content:focus
+,	.yui3-menu.custom_menu_submenu .yui3-menu-content .yui3-menuitem a.yui3-menuitem-content:hover 
+,	 a.yui3-menu-label.yui3-menu-label-menuvisible 		// top level with sub-menu, active 
+{
+	text-decoration:underline; 
+}
+*/
+
+/****************************************************************/
+/*	LIGHT text menus											*/
+
+	.icand_d_fg_clr_light .yui3-menu-horizontal a.yui3-menuitem-content:visited
+,	.icand_d_fg_clr_light .yui3-menu-horizontal a.yui3-menuitem-content:link
+,	.icand_d_fg_clr_light .yui3-menu-horizontal a.yui3-menuitem-content:active
+,	.icand_d_fg_clr_light .yui3-menu-horizontal a.yui3-menuitem-content
+,	.icand_d_fg_clr_light .yui3-menu-horizontal a.yui3-menu-label
+,	.icand_d_fg_clr_light .yui3-menu-horizontal a.yui3-menu-label :link
+,	.icand_d_fg_clr_light .yui3-menu-horizontal a.yui3-menu-label:active
+,	.icand_d_fg_clr_light .yui3-menu-horizontal a.yui3-menu-label:visited 
+{	
+	color:#fff;		/* override visited states in menu */
+}
+
+/* borders have same darkness/lightness polarity as default text */
+.icand_d_fg_clr_light .yui3-menu.custom_menu_submenu .yui3-menu-content{
+	border:1px solid #d7d7d7;
+}
+
+	.icand_d_fg_clr_light .yui3-menuitem.yui3-menuitem-active a.yui3-menuitem-content 	/* top-level, no sub, active */
+,	.icand_d_fg_clr_light  .yui3-menu-horizontal  .custom_menu_submenu 
+					.yui3-menuitem.yui3-menuitem-active a.yui3-menuitem-content		/*sub items with NO submenu:active*/
+,	.icand_d_fg_clr_light  .yui3-menu-horizontal .custom_menu_submenu 
+					.yui3-menuitem.yui3-menuitem-active a.yui3-menuitem-content		 /*selected with no sub-menu*/
+/*,	.icand_d_fg_clr_light .custom_menu_submenu .yui3-menu-content .yui3-menuitem a.yui3-menuitem-content:hover
+,	.icand_d_fg_clr_light .custom_menu_submenu .yui3-menu-content .yui3-menuitem a.yui3-menuitem-content:focus */
+{
+	background-color:#f7f7f7;	/*#b3d4ff;*/
+	color:#0f0f0f;
+}
+
+	.icand_d_fg_clr_light  a.yui3-menu-label.yui3-menu-label-menuvisible 		/* top level with sub-menu, active */
+,	.icand_d_fg_clr_light   .custom_menu_submenu 	 a.yui3-menu-label.yui3-menu-label-menuvisible  /* sub level with sub-menu, active */
+{
+	background-color:#666;
+}
+
+
+.icand_d_fg_clr_light .custom_menu_submenu .yui3-menu-content a 		/* all sub-menu items, inactive */
+{
+	background-color:#0f0f0f;	/*#b3d4ff;*/
+	color:#f7f7f7;
+}
+
+/****************************************************************/
+/*	DARK text menus												*/
+
+	.icand_d_fg_clr_dark .yui3-menu-horizontal a.yui3-menuitem-content:visited
+,	.icand_d_fg_clr_dark .yui3-menu-horizontal a.yui3-menuitem-content:link
+,	.icand_d_fg_clr_dark .yui3-menu-horizontal a.yui3-menuitem-content:active
+,	.icand_d_fg_clr_dark .yui3-menu-horizontal a.yui3-menuitem-content
+,	.icand_d_fg_clr_dark .yui3-menu-horizontal a.yui3-menu-label
+,	.icand_d_fg_clr_dark .yui3-menu-horizontal a.yui3-menu-label :link
+,	.icand_d_fg_clr_dark .yui3-menu-horizontal a.yui3-menu-label:active
+,	.icand_d_fg_clr_dark .yui3-menu-horizontal a.yui3-menu-label:visited 
+{	
+	color:#000;		/* override visited states in menu */
+}
+
+/* borders have same darkness/lightness polarity as default text */
+.icand_d_fg_clr_dark .yui3-menu.custom_menu_submenu .yui3-menu-content{
+	border:1px solid #272727;
+}
+
+	.icand_d_fg_clr_dark .yui3-menuitem.yui3-menuitem-active a.yui3-menuitem-content 	/* top-level, no sub, active */
+,	.icand_d_fg_clr_dark  .yui3-menu-horizontal  .custom_menu_submenu 
+					.yui3-menuitem.yui3-menuitem-active a.yui3-menuitem-content		/*sub items with NO submenu:active*/
+,	.icand_d_fg_clr_dark  .yui3-menu-horizontal .custom_menu_submenu 
+					.yui3-menuitem.yui3-menuitem-active a.yui3-menuitem-content		 /*selected with no sub-menu*/
+/*,	.icand_d_fg_clr_dark .custom_menu_submenu .yui3-menu-content .yui3-menuitem a.yui3-menuitem-content:hover
+,	.icand_d_fg_clr_dark .custom_menu_submenu .yui3-menu-content .yui3-menuitem a.yui3-menuitem-content:focus */
+{
+	background-color:#070707;	/*#b3d4ff;*/
+	color:#f7f7f7;
+}
+
+	.icand_d_fg_clr_dark  a.yui3-menu-label.yui3-menu-label-menuvisible 		/* top level with sub-menu, active */
+,	.icand_d_fg_clr_dark   .custom_menu_submenu 	 a.yui3-menu-label.yui3-menu-label-menuvisible  /* sub level with sub-menu, active */
+{
+	background-color:#aaa;
+}
+
+
+.icand_d_fg_clr_dark .custom_menu_submenu .yui3-menu-content a 		/* all sub-menu items, inactive */
+{
+	background-color:#f7f7f7;	/*#b3d4ff;*/
+	color:#070707;
+}
+
+/*--------------------------Category lists, Glossary styles----------------------------------*/
+	table.boxaligncenter th
+,	table.glossarycategoryheader
+{
+	border-bottom:1px dotted #999999;
+}
+
+/*------------------------------------ database tabtree styles-----------------------*/
+#region-main .tabtree{
+	border-bottom: dotted 1px #999999;
+}

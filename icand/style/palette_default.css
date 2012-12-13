@@ -1,0 +1,256 @@
+/**
+ * Licence 
+ * 
+ * This software is distributed under the terms and conditions of the GNU General Public Licence, v 3 (GPL). 
+ * The complete terms and conditions of the GPL are available at http://www.gnu.org/licenses/gpl-3.0.txt
+ * 
+ * Copyright Notice 
+ *
+ * Copyright © NSW Technical and Further Education Commission (TAFE NSW), TAFE eLearning Hub 2012 
+ *
+ * Acknowledgements
+ * - Renee Lance, project manager and lead designer 
+ * - Glen Byram, lead programmer
+ *
+ * Created: 05Oct2012 - Glen Byram TAFE eLearning Hub
+ * Mods:	11Oct2012 - Glen added case for .book_content
+*/
+
+/* foreground (text) colours ======================================== */ 
+
+	.icand_d_fg_clr_light 
+,	.icand_d_fg_clr_light a /*MSIE doesn't do "inherit" */
+{
+	color:white;
+}
+
+	.icand_d_fg_clr_dark 
+,	.icand_d_fg_clr_dark a 
+{
+	color:#00002f;
+}
+
+/* background colours ======================================== */ 
+/*
+/* ---------- light backgrounds ----------------------- */
+
+  .icand_d_bg_clr_light.icand_d_bg_clr_mono
+, .icand_d_bg_clr_lightblock.icand_d_bg_clr_mono 	.block
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_mono 	.section.main 
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_mono 	.box
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_mono 	.book_content
+{background:#eee;}
+
+  .icand_d_bg_clr_light.icand_d_bg_clr_bw
+, .icand_d_bg_clr_lightblock.icand_d_bg_clr_bw 		.block
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_bw 	.section.main 
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_bw 	.box  
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_bw 	.book_content  
+{background:#fff;}
+
+  .icand_d_bg_clr_light.icand_d_bg_clr_0
+, .icand_d_bg_clr_lightblock.icand_d_bg_clr_0 		.block
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_0		.section.main 
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_0		.box
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_0		.book_content
+{background:#FEBFDC;}
+
+  .icand_d_bg_clr_light.icand_d_bg_clr_1
+, .icand_d_bg_clr_lightblock.icand_d_bg_clr_1  		.block
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_1		.section.main 
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_1		.box
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_1		.book_content
+{background:#FECCBF;}
+
+  .icand_d_bg_clr_light.icand_d_bg_clr_2
+, .icand_d_bg_clr_lightblock.icand_d_bg_clr_2  		.block
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_2		.section.main 
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_2		.box
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_2		.book_content
+{background:#FEDFBF;}
+
+  .icand_d_bg_clr_light.icand_d_bg_clr_3
+, .icand_d_bg_clr_lightblock.icand_d_bg_clr_3 		.block
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_3		.section.main
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_3		.box
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_3		.book_content
+{background:#FEECBF;}
+
+  .icand_d_bg_clr_light.icand_d_bg_clr_4
+, .icand_d_bg_clr_lightblock.icand_d_bg_clr_4  		.block
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_4		.section.main
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_4		.box
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_4		.book_content
+{background:#FEF9BF;}
+
+  .icand_d_bg_clr_light.icand_d_bg_clr_5
+, .icand_d_bg_clr_lightblock.icand_d_bg_clr_5  		.block
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_5		.section.main
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_5		.box
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_5		.book_content
+{background:#F2FEBF;}
+
+  .icand_d_bg_clr_light.icand_d_bg_clr_6
+, .icand_d_bg_clr_lightblock.icand_d_bg_clr_6 		.block
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_6		.section.main
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_6		.box
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_6		.book_content
+{background:#CCFEBF;}
+
+  .icand_d_bg_clr_light.icand_d_bg_clr_7
+, .icand_d_bg_clr_lightblock.icand_d_bg_clr_7  		.block
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_7		.section.main
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_7		.box
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_7		.book_content
+{background:#BFFEE3;}
+
+  .icand_d_bg_clr_light.icand_d_bg_clr_8
+, .icand_d_bg_clr_lightblock.icand_d_bg_clr_8  		.block
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_8		.section.main
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_8		.box
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_8		.book_content
+{background:#BFE3FE;}
+
+  .icand_d_bg_clr_light.icand_d_bg_clr_9
+, .icand_d_bg_clr_lightblock.icand_d_bg_clr_9  		.block
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_9		.section.main
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_9		.box
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_9		.book_content
+{background:#C8C8FE;}
+
+  .icand_d_bg_clr_light.icand_d_bg_clr_10
+, .icand_d_bg_clr_lightblock.icand_d_bg_clr_10 		.block
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_10	.section.main
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_10	.box
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_10	.book_content
+{background:#DABFFE;}
+
+  .icand_d_bg_clr_light.icand_d_bg_clr_11
+, .icand_d_bg_clr_lightblock.icand_d_bg_clr_11 		.block
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_11	.section.main
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_11	.box
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_11	.book_content
+{background:#FFBFFE;}
+
+/* ---------- dark backgrounds ----------------------- */
+  .icand_d_bg_clr_dark.icand_d_bg_clr_0
+, .icand_d_bg_clr_darkblock.icand_d_bg_clr_0  	.block
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_0	.section.main
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_0	.box
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_0	.book_content
+{background:#CE3643;}
+
+  .icand_d_bg_clr_dark.icand_d_bg_clr_1
+, .icand_d_bg_clr_darkblock.icand_d_bg_clr_1  	.block
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_1 	.section.main	
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_1 	.box
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_1 	.book_content
+{background:#B054AB;}
+
+  .icand_d_bg_clr_dark.icand_d_bg_clr_2
+, .icand_d_bg_clr_darkblock.icand_d_bg_clr_2  	.block
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_2	.section.main
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_2 	.box
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_2 	.book_content
+{background:#E16B3B;}
+
+  .icand_d_bg_clr_dark.icand_d_bg_clr_3
+, .icand_d_bg_clr_darkblock.icand_d_bg_clr_3  	.block	
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_3	.section.main
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_3 	.box
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_3 	.book_content
+{background:#E6B165;}
+
+   .icand_d_bg_clr_dark.icand_d_bg_clr_4
+ , .icand_d_bg_clr_darkblock.icand_d_bg_clr_4  	.block
+ , .icand_d_bg_clr_darksection.icand_d_bg_clr_4	.section.main
+ , .icand_d_bg_clr_darksection.icand_d_bg_clr_4 	.box
+  , .icand_d_bg_clr_darksection.icand_d_bg_clr_4 	.book_content
+ {background:#95C468;}
+
+   .icand_d_bg_clr_dark.icand_d_bg_clr_5
+, .icand_d_bg_clr_darkblock.icand_d_bg_clr_5 	.block
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_5	.section.main
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_5 	.box
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_5 	.book_content
+{background:#747F81;}
+
+  .icand_d_bg_clr_dark.icand_d_bg_clr_6
+, .icand_d_bg_clr_darkblock.icand_d_bg_clr_6 	.block
+ , .icand_d_bg_clr_darksection.icand_d_bg_clr_6	.section.main
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_6 	.box 
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_6 	.book_content 
+{background:#2A965C;}
+
+  .icand_d_bg_clr_dark.icand_d_bg_clr_7
+, .icand_d_bg_clr_darkblock.icand_d_bg_clr_7  	.block
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_7	.section.main
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_7 	.box
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_7 	.book_content
+{background:#137092;}
+
+  .icand_d_bg_clr_dark.icand_d_bg_clr_8
+, .icand_d_bg_clr_darkblock.icand_d_bg_clr_8  	.block
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_8	.section.main
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_8 	.box
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_8 	.book_content
+{background:#2D447A;}
+
+  .icand_d_bg_clr_dark.icand_d_bg_clr_9
+, .icand_d_bg_clr_darkblock.icand_d_bg_clr_9  	.block
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_9	.section.main
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_9 	.box
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_9 	.book_content
+{background:#5A3B74;}
+
+  .icand_d_bg_clr_dark.icand_d_bg_clr_10
+, .icand_d_bg_clr_darkblock.icand_d_bg_clr_10 	.block
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_10	.section.main	
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_10 	.box
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_10 	.book_content
+{background:#684C41;}
+
+  .icand_d_bg_clr_dark.icand_d_bg_clr_11
+, .icand_d_bg_clr_darkblock.icand_d_bg_clr_11 	.block
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_11	.section.main
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_11 	.box
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_11 	.book_content
+{background:#5A3972;}
+
+/* #747F81 */
+  .icand_d_bg_clr_dark.icand_d_bg_clr_mono
+, .icand_d_bg_clr_darkblock.icand_d_bg_clr_mono 		.block 
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_mono	.section.main
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_mono 	.box
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_mono 	.book_content
+{background:#555;}
+
+  .icand_d_bg_clr_dark.icand_d_bg_clr_bw
+, .icand_d_bg_clr_darkblock.icand_d_bg_clr_bw 		.block 
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_bw 		.section.main  
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_bw	 	.box
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_bw	 	.book_content
+{background:#070707;}
+
+/* ========== borders ====================== */
+  .icand_d_bg_clr_light
+, .icand_d_bg_clr_lightblock 	.block
+, .icand_d_bg_clr_lightsection 	.section.main
+, .icand_d_bg_clr_lightsection 	.box
+{border-color:#00002f;}
+
+  .icand_d_bg_clr_dark
+, .icand_d_bg_clr_darkblock 		.block
+, .icand_d_bg_clr_darksection 	.section.main
+, .icand_d_bg_clr_darksection 	.box
+{border-color:#f7f7f7;}
+
+
+/* ??? THE FOLLOWING RULE MUST BE LATER IN CSS THAN icand_colour___ TO OVERRIDE for .block */
+/*
+.icand_dec_bordermono ,
+.icand_dec_borderblockmono .block,
+.icand_dec_bordersectionmono .section.main  {
+	border-color:black; 
+}
+*/

@@ -1,0 +1,60 @@
+/**
+ * Licence 
+ * 
+ * This software is distributed under the terms and conditions of the GNU General Public Licence, v 3 (GPL). 
+ * The complete terms and conditions of the GPL are available at http://www.gnu.org/licenses/gpl-3.0.txt
+ * 
+ * Copyright Notice 
+ *
+ * Copyright © NSW Technical and Further Education Commission (TAFE NSW), TAFE eLearning Hub 2012 
+ *
+ * Acknowledgements
+ * - Renee Lance, project manager and lead designer 
+ * - Glen Byram, lead programmer
+ *
+ * Created: 01Apr2012 - Glen Byram TAFE eLearning Hub
+ * Modified: 01Jun2012 Glen - added !important
+ *			12Oct2012 Glen renamed msie classes to icand_*
+ */
+
+/* ======== hires ================== */
+.icand_hires a ,
+.icand_hires input
+{ 
+	color:black !important;
+	text-decoration:none;
+	font-weight:bold;
+	background:#aaf;
+} 
+
+.icand_hires a:hover {
+	font-size:larger;
+	background:black !important;
+	color:white !important; 	
+}
+
+	.icand_hires .icand_dec_shading1
+,	.icand_hires .icand_dec_shading2 {
+		background:white;
+	}
+	
+	.icand_hires .icand_decoration_layer {
+		display:none;
+	}
+
+	.icand_hires .icand_content
+,	.icand_hires #icand_strct_body
+,	.icand_hires .icand_styling_container
+,	.icand_hires .icand_strct_boxrowcell
+,	.icand_hires .icand_strct_boxrowcontent
+,	.icand_hires .icand_msie_td
+,	.icand_hires .block {
+		color:black;
+		background:white;
+		border-color:black;
+	/* filter:alpha(opacity=0);/*Needed for IE*/ 
+	zoom:1; /*IE requires element to be positioned for filter/opacity to work*/
+	-moz-opacity:1.0;/*Older mozilla broswers like NN*/ 
+	-khtml-opacity:1.0;/*Old versions of Safari and "KHTML" browser engines*/ 
+	opacity:1.0;/*FF, Safari, and Opera*/ 		
+}

@@ -1,0 +1,219 @@
+
+/*-------- Accordion Widget --------*/
+
+/*/
+These widgets are modified by TAFE NSW, TAFE eLearning Hub 2012.
+and are based on JQuery theme Roller.
+
+Created:01/06/12 - Renee Lance TAFE eLearning Hub
+Modified: 20/06/12 - Renee Lance TAFE eLearning Hub
+Modified: 09/07/12 - Kerrin Ireland TAFE eLearning Hub
+Modified: 29/08/12 - Renee Lance TAFE eLearning Hub Moodle 2.3 styles
+Modified: 03/10/12 - Kerrin Ireland TAFE eLearning Hub - container margin
+Modified: 09/10/12 - Kerrin Ireland TAFE eLearning Hub - accordion header changed to h4
+/*/
+
+.accordion_container{
+	margin-bottom:12px;
+}
+.accordion{
+	font-size: 110%;
+	font-family: Arial, Helvetica, sans-serif;
+	}
+#page-content h4.ui-accordion-header {
+    color: #000000;
+	font-family:Arial, Helvetica, sans-serif;
+	margin:0.2em 0;
+	font-weight:bold;
+	padding-left:0;
+	}
+#page-content h4.ui-accordion-header a{
+	font-weight:bold;
+	padding-left:20px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 70%;	
+	}
+h4.ui-accordion-header a:hover {
+    color: #003366;
+    text-decoration: underline;
+	}
+.ui-accordion .ui-accordion-content {
+	padding: 1em;
+	top:-5px;
+	font-size:90%;
+	border-top: 1px solid #AAAAAA;
+	}
+ .ui-accordion-icons .ui-accordion-header a {
+
+	}
+.course-content .ui-accordion .ui-accordion-content ul,
+.course-content .ui-accordion .ui-accordion-content ol{
+	margin-left:30px;
+	}
+
+
+/*-------- Tabbed Widget --------*/
+.ui-widget-content {
+    font-size:100%;
+	line-height:125%;
+	}
+
+/* this is the tab header (a) - when it is selected */
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a, 
+.ui-tabs .ui-tabs-nav li.ui-state-disabled a, 
+.ui-tabs .ui-tabs-nav li.ui-state-processing a{
+	font-weight:bold;
+	font-size:110%;
+	}
+/* this is the tab header (a) - when it is inactive */
+.ui-tabs .ui-tabs-nav li a, 
+.ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a{
+	font-weight:bold;
+	font-size:110%;
+	}
+.course-content ul.topics li.section div.content .summary .no-overflow ul li.ui-tabs .ui-tabs-nav li a:hover,
+.course-content ul.topics li.section div.content .summary .no-overflow ul li.ui-state-hover a:hover { 
+	color: #003366;
+    text-decoration: underline;
+	}
+.course-content ul.topics li.section div.content .summary .no-overflow ul.ui-tabs-nav 
+/*ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all*/{
+	margin:0;
+	padding:0.2em 0.2em 0;
+	border: 1px solid #AAAAAA;
+	}
+	
+.course-content ul.topics li.section div.content .summary .no-overflow .ui-tabs ul.ui-tabs-nav li{
+    list-style:none;
+    }
+
+/* this is the INACTIVE tab header */
+.course-content ul.topics li.section div.content .summary .no-overflow ul li.ui-state-default,
+.course-content ul.topics li.section div.content .summary .no-overflow ul li.ui-corner-top{
+	background: url([[pix:theme|ui-bg_glass_75_e6e6e6_1x400]]) repeat-x scroll 50% 50% #E6E6E6;
+	padding-bottom: 0;
+	padding-left: 0;
+	border: 1px solid #AAAAAA;
+	}
+	
+/* this is the CURRENT/ACTIVE tab header */
+.course-content ul.topics li.section div.content .summary .no-overflow ul li.ui-state-active{
+	background-color:  #FFFFFF;
+	background-image:none;
+	padding-bottom: 1px;
+	margin:0;
+	}
+.course-content ul.topics li.section div.content .summary .no-overflow ul li.ui-tabs-selected{
+	background-color: #FFFFFF;
+	margin-bottom: 0;
+    padding-bottom: 1px;
+	background-image:none;
+	}
+/*================================== background images ==========================*/
+/*===============================================================================*/
+
+/* Component containers
+----------------------------------*/
+
+.ui-widget-content { 
+	background-image: url([[pix:theme|ui-bg_flat_75_ffffff_40x100]]);
+	}
+
+.ui-widget-header { 
+	background-image: url([[pix:theme|ui-bg_highlight-soft_75_cccccc_1x100]]);
+	}
+
+/* Interaction states
+----------------------------------*/
+.ui-state-default, 
+.ui-widget-content #region-main-box  .ui-state-default, 
+.ui-widget-header #region-main-box .ui-state-default {
+	background-image: url([[pix:theme|ui-bg_glass_75_e6e6e6_1x400]]);
+	}
+
+.ui-state-hover, 
+.ui-widget-content .ui-state-hover, 
+.ui-widget-header .ui-state-hover, 
+.ui-state-focus, 
+.ui-widget-content .ui-state-focus, 
+.ui-widget-header .ui-state-focus { 
+	background-image: url([[pix:theme|ui-bg_glass_75_dadada_1x400]])
+	}
+
+.ui-state-active, 
+.ui-widget-content .ui-state-active, 
+.ui-widget-header .ui-state-active {
+	background-image: url([[pix:theme|ui-bg_glass_65_ffffff_1x400]]);
+	}
+
+
+/* Interaction Cues
+----------------------------------*/
+.ui-state-highlight, 
+.ui-widget-content .ui-state-highlight, 
+.ui-widget-header .ui-state-highlight  {	
+	background-image:url([[pix/:theme|ui-bg_glass_55_fbf9ee_1x400]]); }
+
+.ui-state-error, 
+.ui-widget-content .ui-state-error, 
+.ui-widget-header .ui-state-error {
+	background-image:url([[pix/images:theme|ui-bg_glass_95_fef1ec_1x400]]); 
+	}
+
+/* Icons
+----------------------------------*/
+
+/* states and images */
+.ui-icon {
+	margin-left:-10px;
+	}
+.ui-icon {
+	background-image: url([[pix:theme|ui-icons_222222_256x240]]); 
+	}
+.ui-widget-content .ui-icon {
+	background-image: url([[pix:theme|ui-icons_222222_256x240]]); 
+	}
+.ui-widget-header .ui-icon {
+	background-image: url([[pix:theme|ui-icons_222222_256x240]]); 
+	}
+.ui-state-default .ui-icon { 
+	background-image: url([[pix:theme|ui-icons_888888_256x240]]); 
+	}
+.ui-state-hover .ui-icon, 
+.ui-state-focus .ui-icon {
+	background-image: url([[pix:theme|ui-icons_454545_256x240]]); 
+	}
+.ui-state-active .ui-icon {
+	background-image: url([[pix:theme|ui-icons_454545_256x240]]); 
+	}
+.ui-state-highlight .ui-icon {
+	background-image: url([[pix:theme|ui-icons_454545_256x240]]); 
+	}
+.ui-state-error .ui-icon,
+.ui-state-error-text .ui-icon {
+	background-image: url([[pix:theme|ui-icons_cd0a0a_256x240]]); 
+	}
+
+/* Misc visuals
+----------------------------------*/
+/* Overlays */
+.ui-widget-overlay { 
+	background-image: url([[pix:theme|ui-bg_flat_0_aaaaaa_40x100]]); 
+	}
+.ui-widget-shadow { 
+	background-image: url([[pix:theme|ui-bg_flat_0_aaaaaa_40x100]]);
+	 }
+
+/*Accessibility instructions - for screen reader users */
+.accordion_container .userInstructions{
+    height: 1px;
+    text-indent: -9999px;
+	padding:0;
+	margin:0;
+}
+.tabs_container .userInstructions{
+    height: 1px;
+    text-indent: -9999px;
+	padding:0;
+	margin:0;
+}

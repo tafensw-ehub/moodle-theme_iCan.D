@@ -1,0 +1,84 @@
+/**
+ * Licence 
+ * 
+ * This software is distributed under the terms and conditions of the GNU General Public Licence, v 3 (GPL). 
+ * The complete terms and conditions of the GPL are available at http://www.gnu.org/licenses/gpl-3.0.txt
+ * 
+ * Copyright Notice 
+ *
+ * Copyright © NSW Technical and Further Education Commission (TAFE NSW), TAFE eLearning Hub 2012 
+ *
+ * Acknowledgements
+ * - Renee Lance, project manager and lead designer 
+ * - Glen Byram, lead programmer
+ *
+ * Created:17Aug2012 - Glen Byram TAFE eLearning Hub
+ * Modified: 
+ *
+ * There are several peculiarities of questionbankwindow. 
+ * 1. It uses the "block" class, and tries to imitate blocks in the pre-
+ * and post- divs.
+ * 2. It forces its own colours for the top of the block
+*/
+
+#page-mod-quiz-edit .questionbankwindow div.header {
+	background:none;/*override the dark blue*/
+}
+
+.questionbankwindow.block {
+    display:block;
+    float: right;
+   *width: 30%; /* ANY width needed for MSIE */
+}
+
+.questionbankwindow.block.collapsed {
+	width:100%;
+	clear:both;
+	*float:left; /*for IE */
+}
+
+.quizcontents.quizwhenbankcollapsed { /* to help MSIE */
+	clear:both;
+}
+
+/* ============================================= */
+/* within a yui popup menu */
+#qtypechoicecontainer #chooseqtype .qtypes {
+	position:static;/*override relative*/
+}
+
+  #qtypechoicecontainer #chooseqtype .instruction
+, #qtypechoicecontainer #chooseqtype .qtypesummary {
+	position:static;/*override absolute*/
+	float:right;
+	height:100%;
+}
+
+  #qtypechoicecontainer #chooseqtype .realqtypes 
+, #qtypechoicecontainer #chooseqtype .fakeqtypes {
+	float:left;
+}
+
+  #qtypechoicecontainer #chooseqtype .instruction
+, #qtypechoicecontainer #chooseqtype .qtypesummary 
+, #qtypechoicecontainer #chooseqtype .realqtypes {
+	width:46%;
+}
+
+  #qtypechoicecontainer #chooseqtype .instruction
+, #qtypechoicecontainer #chooseqtype .qtypesummary 
+, #qtypechoicecontainer #chooseqtype .realqtypes 
+, #qtypechoicecontainer #chooseqtype .qtypes {
+	border:none;
+	background:none;
+}
+
+
+#qtypechoicecontainer #chooseqtype .fakeqtypes {
+	clear:both;
+	width:90%;
+}
+
+#qtypechoicecontainer_c {
+	background:white;
+}

@@ -1,0 +1,158 @@
+/*//////////////////////   Two column layout template    /////////////////////////////
+
+Two column template for eCommunities was created : / 19/12/2011
+By the TAFE NSW eLearning Hub
+
+/**
+* Licence 
+ * 
+ * This software is distributed under the terms and conditions of the GNU General Public Licence, v 3 (GPL). 
+ * The complete terms and conditions of the GPL are available at http://www.gnu.org/licenses/gpl-3.0.txt
+* 
+ * Copyright Notice 
+ *
+* Copyright © NSW Technical and Further Education Commission (TAFE NSW), TAFE eLearning Hub 2012 
+*/
+
+-------------------------------------------------------------
+Versions.
+
+V01: modified : 19/12/2011 by: Kerrin Ireland
+V02: modified : 28/08/2012 by: Renee Lance
+V03: modified : 10/10/2012 by: Kerrin Ireland
+
+-------------------------------------------------------------
+
+
+Contents
+--------------------------------------------------------------*/
+.twocolLayout{
+	width:97%;
+	background-color:#ffffff;
+	padding:10px 5px;
+	}
+.partHeading{
+	width:auto;
+	display:block;
+	margin:0;
+	height:auto;
+	font-size:100%;
+	}
+.partFloatLeftside{
+	margin:0 2% 0 0;
+	float:left;
+	width:48%;	
+	}
+.partHeading h4.part{
+	padding-left:10px; 
+    font-weight:normal;
+    margin:10px 0 5px 0 0;
+	font-size:115%;
+	}
+.partFeatureBox{
+	width:auto;
+	display:block;
+   	border-top:solid 1px #d7d7d7;
+   	border-bottom:solid 1px #d7d7d7;
+	margin:10px 0 10px 10px;
+	color:#818181;	
+	}
+.partFeatureText{
+	width:auto;
+	margin:0 10px;
+	font-size:130%;
+	line-height:140%;
+	font-style:italic;
+	font-weight:normal;
+	padding:10px 0 20px 0;
+	display:block;
+	}
+p.partFeature{
+	margin:0;
+	}
+.partColouredBox{
+	width:auto;
+    background-color:#f5f5f5;
+    margin:30px 0 20px 10px;
+	}
+.partInstructionBox{
+	width:auto;
+	margin:10px;
+	font-style:normal;
+	padding:0 0 15px 0;
+	}
+h5.part{
+	margin:0 0 10px 0;
+	padding:8px 0 5px 0;
+	border-bottom:#FFF solid 2px;
+	font-weight:normal;
+	width:100%;
+	font-size:100%;
+	}
+.partInstructionText{
+	margin:0 10px 0 10px;
+	}
+.partListContainer{
+	width:auto;
+    margin:10px 0 10px 15px;
+	}
+h6.part{
+	margin:0 0 10px 0;
+	padding:0 0 5px 0;
+	font-weight:normal;
+	color:#575757;
+	border-bottom:solid 1px #dedede;
+	width:100%;;
+	display:block;
+	font-size:90%;
+	}
+h7.part{
+	margin:10px 0 5px 0;
+    font-weight:normal;
+    color:#000;
+	font-size:80%;
+	}
+.partList{
+	margin:0 0 10px 0
+	}
+.partFloatRightside{
+	width:48%;
+	float:left;
+	}
+.partImageContainer{
+	width:100%;
+	border-top:solid 1px #d7d7d7;
+	border-bottom:solid 1px #d7d7d7;
+	float:left;
+	margin:10px 0;		
+	}
+.partImageBox{
+	width:auto;
+    margin:10px 10px 5px 10px;
+    font-style:italic;
+    padding-bottom:2px;
+	display:block;
+	}
+img.part{
+	width:100%;
+	height:auto; 
+	border:solid 1px #dedede;
+	}
+.partLowerRight{
+	width:100%;
+	float:left;
+	margin:10px 0;
+	padding:0;		
+	}
+.partListRightContainer{
+	width:auto;
+    margin:0;
+	}
+
+.partListRight{
+	margin:0 10px 0 10px;
+	}
+.clearFloat{
+	clear:both;
+	display:block;
+	}

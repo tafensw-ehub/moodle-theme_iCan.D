@@ -1,0 +1,175 @@
+prefix c = adequately commented
+
+/**
+ * Licence 
+ * 
+ * This software is distributed under the terms and conditions of the GNU General Public Licence, v 3 (GPL). 
+ * The complete terms and conditions of the GPL are available at http://www.gnu.org/licenses/gpl-3.0.txt
+ * 
+ * Copyright Notice 
+ *
+ * Copyright © NSW Technical and Further Education Commission (TAFE NSW), TAFE eLearning Hub 2012 
+ *
+ * Acknowledgements
+ * - Renee Lance, project manager and lead designer 
+ * - Glen Byram, lead programmer
+ *
+ * @package		theme
+ * @subpackage	icand
+ * @copyright	NSW Technical and Further Education Commission (TAFE NSW), TAFE eLearning Hub 2012
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @author		Glen Byram (NSW TAFE eLearning Hub)
+ * @version		28Sep2012
+ */
+ 
+todo: uploader.php, upload_receiver.php		internationalise prompts. As these are in iframes, they are ignorant of get_string(..)
+
+ =======================================================================================================
+ 
+\files.txt -- this file
+
+---------FOLDERS--------------------
+\custom			?? something added by a designer ??
+\db				Moodle defined files to handle upgrading / initialising database values
+\javascript		Custom javascripts used by theme
+\lang			Moodle defined files to define front-end text displayed to users
+\lang\en		English language
+\layout			PHP that generates the HTML seen by users
+\lib			collection of supporting PHP code
+\lib\unitTests	not part of core. Used for development
+\pix			graphics used by theme (pre-defined background tiles)
+\pix\uploaded	MAKE THIS WRITEABLE FOR WEB SERVER PROCESS 
+				- default location for user-uploaded files (path defined in config.php::$FILE_UPLOAD_FOLDER_PATH
+\secret			contains a PHP script to copy values from obsolete Quicksilver theme to new iCan.D. 
+				- should be deleted after copying, or if Quicksilver doesn't exist
+\style			CSS files used by theme
+
+=========================================================================================================
+-------- ROOT FOLDER ------------------
+c \config.php		defined by Moodle. Also class IcandConstantsConfig, used by uploader.
+c \lib.php		defined by Moodle. Not currently used. If there a theme-wide substitutions for CSS, this script
+				replaces the placeholders with theme values in CSS rules.
+c \settings.php	defined by Moodle. Makes Moodle HTML form to set theme configuration for site admins. Includes settings_inc.php
+\settings_inc.php	Does the actual creation of the configuration form. It is a seperate file so it can also
+					be included in the course-specific popup \layout\overridemenu_inc.php
+c \settings_popup.php	class Icand_admin_setting_page. Mimics the Moodle API for a settings container, in order to re-use the 
+					Moodle classes for settings fields in a course-specific pop (\layout\overridemenu_inc.php)
+					
+
+c \uploader.php		makes an HTML form to select file for upload, & uploads (used in iFrame in settings_inc.php to upload graphics)
+c \upload_receiver.php	receives results of upload initiated by uploader.php and uploads local file to webserver
+c \version.php	defined by Moodle. Defines the version of this theme plugin, required Moodle core version, theme internal name.
+
+--------- \CUSTOM ---------------------
+\custom\interface.css
+\custom\module39Bottom.png
+\custom\module39top.png
+\custom\moodle23.css
+\custom\themeGraphics
+\custom\themeGraphics\Banner_LeftLogo_interface.png
+\custom\themeGraphics\BG_desktop03_interface.png
+\custom\themeGraphics\BG_header_interface.png
+\custom\themeGraphics\BG_main_interface02.jpg
+\custom\themeGraphics\BG_patternDesktop_interface.jpg
+\custom\themeGraphics\BG_toolbar01Home_interface02.png
+\custom\themeGraphics\BG_toolbar2.png
+\custom\themeGraphics\c15_BG_Header_interfaceCourse.png
+\custom\themeGraphics\c15_BG_toolbar01Course_interface02.png
+\custom\themeGraphics\logoFooterRight_interface.png
+\custom\themeGraphics\logoRight_interface.png
+\custom\themeGraphics\Logo_interface_TAFENSW.png
+
+----------- \db ------------------------
+\db\install.php		efined by Moodle. Run when theme installed for first time
+\db\upgrade.php		efined by Moodle. Run when theme is upgraded to newer version
+
+----------- \javascript ----------------
+\javascript\icand-fixer_end.js		Small utility to test for "$" function (workaround for name clash: course_menu block vs. jQuery)
+\javascript\icand-fixer_start.js	Small utility to correct for dual "$" function (workaround for name clash: course_menu block vs. jQuery)
+\javascript\icand_utility.js		Small utilities for changing text size, colour 
+	// the following are not part of the core, but were included to enable "widgets" that will later be plugins on their own
+\javascript\jquery-1.8.0.min.js
+\javascript\jquery.ui.accordion.js
+\javascript\jquery.ui.core.js
+\javascript\jquery.ui.tabs.js
+\javascript\jquery.ui.widget.js
+\javascript\multiSlideshow.js
+\javascript\multiWidgets.js
+\javascript\piwik_footer.js
+
+------------ \lang --------------------
+\lang\en\theme_icand.php		defined by Moodle. Text strings to display in interface pages.
+
+------------ \layout ------------------
+\layout\general_inc.php			called by general.php - does the actual HTML
+\layout\general.php				defined by Moodle - key PHP to generate pages. Gets all the config values, then calls general_inc.php
+\layout\overridemenu_inc.php	called by general.php - writes HTML for "course override" popup
+
+------------ \lib ---------------------
+\lib\Buildpage_inc.php			class IcandBuildPage - supports generating page HTML
+\lib\ThemeRealVisChecker_inc.php		class IcandRealVisChecker - supports controlling user modification of theme configuration
+\lib\ThemeBackgroundImages.php	class IcandBackgroundImages - supports HTML formatting of background images
+\lib\ThemeBackgroundIntegrator.php	class IcandBackgroundIntegrator - intergrator to manage background images and background colours
+\lib\ThemeColourPalette.php		class IcandColourPalette - supports background/text colours
+\lib\ThemeConstantsBackend_inc.php		class IcandConstantsBackend - string values used in database & intra-theme signalling
+\lib\ThemeConstantsCSS_inc.php	class IcandConstantsCSS - string values (e.g. HTML class names) used in generating HTML
+\lib\ThemeConstantsHTMLForms_inc.php		class IcandConstantsHTMLForms - string values used in forms, passed from HTML pages to PHP handlers
+\lib\ThemeOptions_inc.php		class IcandConfigOptions - atomic configuration values used by theme to define appearance
+\lib\ThemeSettingsWebInterface_inc.php class IcandSettingsWebInterface - helper class to generate HTML forms to set configuration values
+\lib\ThemeSettings_inc.php		classes IcandSettingsBase and IcandSettingsOverrides - interface to configuration values
+\lib\ThemeTextContent_inc.php	class IcandTextContent - generates HTML for text components displayed in pages (e.g. breadcrumbs)
+\lib\ThemeWholePageOptions_inc.php class IcandWholePageOptions - 
+c \lib\twodimensionmulticheck2.php	class admin_setting_configtwoaxismultiradio2 
+								- extends Moodle admin_setting to display radio button grid for setting configuration options
+
+------------ \lib\unitTests ---------------------
+\lib\unitTests\test.php
+\lib\unitTests\ThemeSettings_test.php
+
+------------ \pix -------------------------------
+\pix\BGPattern1_Content.png
+\pix\BGPattern2_Content.png
+\pix\BGPattern3_Content.png
+\pix\BGPattern4_Content.png
+\pix\BGPattern5_Content.png
+\pix\BGPatternRev1_Content.png
+\pix\BGPatternRev2_Content.png
+\pix\BGPatternRev3_Content.png
+\pix\BGPatternRev4_Content.png
+\pix\BGPatternRev5_Content.png
+\pix\screenshot.png				displayed in Moodle theme picker dialog page/s
+
+----------- \secret ----------------------------
+\secret\copy.php				copies configuration settings from Quicksilver theme to iCan.D. theme
+
+----------- \style ----------------------------
+\style\icand_content_colours.css
+\style\icand_content_spacing.css
+\style\icand_core_colour.css
+\style\icand_core_font.css
+\style\icand_core_generic.css
+\style\icand_core_layout.css
+
+\style\option_icand_hires.css	styles for accessibility modes
+\style\palette_dark.css			alternate background/text colours
+\style\palette_light.css		alternate background/text colours
+\style\palette_saturated.css	alternate background/text colours
+
+	---- specific to plugins -----------
+\style\categorylists.css
+\style\forumModule.css
+\style\icand_databasemodule.css
+\style\icand_dock.css
+\style\icand_glossarymodule.css
+\style\icand_modbook.css
+\style\icand_modquiz.css
+
+\style\icand_yui3.css			substitutes for YUI (javascript library) popups, etc.
+
+	---- non-core, for widgets -----------
+\style\gallerygrid.css
+\style\cycleCore.css
+\style\cycleonecolumn.css
+\style\templatetwocol.css
+\style\themeRoller.css
+\style\widgetsgeneral.css

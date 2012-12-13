@@ -1,0 +1,53 @@
+/**
+ * Licence 
+ * 
+ * This software is distributed under the terms and conditions of the GNU General Public Licence, v 3 (GPL). 
+ * The complete terms and conditions of the GPL are available at http://www.gnu.org/licenses/gpl-3.0.txt
+ * 
+ * Copyright Notice 
+ *
+ * Copyright © NSW Technical and Further Education Commission (TAFE NSW), TAFE eLearning Hub 2012 
+ *
+ * Acknowledgements
+ * - Renee Lance, project manager and lead designer 
+ * - Glen Byram, lead programmer
+ *
+ * Created: 20Mar2012 - Glen Byram
+ * Modified by: 20Jun12 - Renee Lance TAFE eLearning Hub
+*/
+
+html, body {
+	margin:0;
+	padding:0;
+	border:0;
+	font-size:14px;
+}
+
+img {
+	border:none;
+}
+
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, th, td,
+a, abbr, acronym, blockquote, code, fieldset, form, input, 
+legend, p, pre, q, select, textarea   {
+    margin:0;
+    padding:0;
+}
+
+/* Forms */
+form {
+	display:inline;
+}
+label {
+	cursor:pointer;
+}
+
+/* Links  */
+a, a:link, a:visited, a:active, a:hover {
+	color:inherit;
+	text-decoration:underline;
+}
+
+.no-overflow {
+	overflow:hidden;	/*suppress scrollbar. this has "auto" in core!!!! */
+}

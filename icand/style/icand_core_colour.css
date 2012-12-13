@@ -1,0 +1,218 @@
+/**
+ * Licence 
+ * 
+ * This software is distributed under the terms and conditions of the GNU General Public Licence, v 3 (GPL). 
+ * The complete terms and conditions of the GPL are available at http://www.gnu.org/licenses/gpl-3.0.txt
+ * 
+ * Copyright Notice 
+ *
+ * Copyright © NSW Technical and Further Education Commission (TAFE NSW), TAFE eLearning Hub 2012 
+ *
+ * Acknowledgements
+ * - Renee Lance, project manager and lead designer 
+ * - Glen Byram, lead programmer
+ *
+ * Created: 20Mar2012 - Glen Byram TAFE eLearning Hub
+ * Modified : 20/06/12 - Renee Lance TAFE eLearning Hub
+ *				05Oct2012 - Glen. moved core colours to palette_default.css
+*/
+
+
+/* ============ translucent ========================= */
+/* translucency with percentage */
+.icand_dec_trans75 {
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";/*IE8*/
+	filter:alpha(opacity=75);/*IE7*/
+	zoom:1; /*IE requires element to be positioned for filter/opacity to work*/
+	-moz-opacity:0.75;/*Older mozilla broswers like NN*/ 
+	-khtml-opacity:0.75;/*Old versions of Safari and "KHTML" browser engines*/ 
+	opacity:0.75;/*FF, Safari, and Opera*/ 
+}
+
+.icand_dec_trans50 {
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";/*IE8*/
+	filter:alpha(opacity=50);/*IE7*/
+	zoom:1; /*IE requires element to be positioned for filter/opacity to work*/
+	-moz-opacity:0.5;/*Older mozilla like NN*/ 
+	-khtml-opacity:0.5;/*Old versions of Safari & KHTML*/ 
+	opacity:0.5;/*FF,Safari,Opera*/ 
+}
+
+.icand_dec_trans25{
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";/*IE8*/
+	filter:alpha(opacity=25);/*IE7*/ 
+	zoom:1; /*IE requires element to be positioned for filter/opacity to work*/
+	-moz-opacity:0.25;/*Older mozilla broswers like NN*/ 
+	-khtml-opacity:0.25;/*Old versions of Safari and "KHTML" browser engines*/ 
+	opacity:0.25;/*FF, Safari, and Opera*/ 
+}
+
+.icand_dec_trans10 {
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";/*IE8*/
+	filter:alpha(opacity=10);/*IE7*/ 
+	zoom:1; /*IE requires element to be positioned for filter/opacity to work*/
+	-moz-opacity:0.1;/*Older mozilla broswers like NN*/ 
+	-khtml-opacity:0.1;/*Old versions of Safari and "KHTML" browser engines*/ 
+	opacity:0.1;/*FF, Safari, and Opera*/ 
+}
+
+/* == box decorations ======================================== */  
+/* prefix:icand_dec_ */
+
+.icand_dec_radius,
+.icand_dec_radiusblock .block,
+.icand_dec_radiussection .section.main {		
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	border-radius:7px; 
+	overflow:hidden;	/* clip contents within rounded corners */
+}
+
+
+  .icand_d_bg_clr_light.icand_d_bg_clr_onlyborder
+, .icand_d_bg_clr_lightblock.icand_d_bg_clr_onlyborder 		.block
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_onlyborder	.section.main
+, .icand_d_bg_clr_lightsection.icand_d_bg_clr_onlyborder	.box
+{background:none;}
+
+  .icand_d_bg_clr_dark.icand_d_bg_clr_onlyborder
+, .icand_d_bg_clr_darkblock.icand_d_bg_clr_onlyborder 	.block
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_onlyborder	.section.main
+, .icand_d_bg_clr_darksection.icand_d_bg_clr_onlyborder	.box
+{background:none;}
+
+/* TEXT (FOREGROUND COLOURS ======================================== */ 
+a { color:inherit; /* make links same as other colour 
+					  * doesn't work in IE 7 or earlier */
+} 
+
+/* gradients for overlaying ======================================== */ 
+
+.icand_gradientCover_Palewhite {
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";/*IE8*/
+	filter:alpha(opacity=80);/*IE7*/ 
+	zoom:1; /*IE requires element to be positioned for filter/opacity to work*/
+	-moz-opacity:0.8;/*Older mozilla broswers like NN*/ 
+	-khtml-opacity:0.8;/*Old versions of Safari and "KHTML" browser engines*/ 
+	opacity:0.8;/*FF, Safari, and Opera*/ 
+	background:white;
+}
+	  
+.icand_gradientCover_LightTop {
+	filter:progid:DXImageTransform.Microsoft.Gradient( GradientType=0,
+		startColorstr='#77ffffff', endColorstr='#00000000' );/*IE6-9*/
+	zoom:1; /* MSIE HAS TO have width or height... or zoom */	
+	/* IE8 uses -ms-filter for whatever reason... */
+	/*	-ms-filter:progid:DXImageTransform.Microsoft.gradient( gradientType=0,
+		startColor=#77ffffff, endColorstr=#00ffffff ); */
+	background:#77000000; /*	 fallback (Opera) */
+	background:-moz-linear-gradient(top, rgba(255,255,255,.5), rgba(255,255,255,0)30%);   /* mozilla:FF3.6+ */
+	background:-webkit-gradient(linear,left top,left bottom,color-stop(0.0, rgba(255,255,255,.5)),color-stop(0.3, rgba(255,255,255,0))); /* Chrome, Safari:*/
+}
+
+.icand_gradientCover_DarkTop {
+	filter:progid:DXImageTransform.Microsoft.Gradient( GradientType=0,
+		startColorstr='#77000000', endColorstr='#00000000' );/*IE6-9*/
+	zoom:1; /* MSIE HAS TO have width or height... or zoom */
+	background:#77000000; /*	 fallback (Opera) */
+	background:-moz-linear-gradient(top, rgba(0,0,0,.5), rgba(0,0,0,0)30%);   /* mozilla:FF3.6+ */
+	background:-webkit-gradient(linear,left top,left bottom,color-stop(0.0, rgba(0,0,0,.5)),color-stop(0.3, rgba(0,0,0,0))); /* Chrome, Safari:*/
+}
+
+.icand_gradientCover_LightBottom {
+	filter:progid:DXImageTransform.Microsoft.Gradient( GradientType=0,
+		startColorstr='#00ffffff', endColorstr='#77ffffff' );/*IE6-9*/
+	zoom:1; /* MSIE HAS TO have width or height... or zoom */	
+	background:#77000000; /*	 fallback (Opera) */
+	background:-moz-linear-gradient(top, rgba(255,255,255,0)70%, rgba(255,255,255,.5));   /* mozilla:FF3.6+ */
+	background:-webkit-gradient(linear,left top,left bottom,color-stop(0.7, rgba(255,255,255,0)),color-stop(1.0, rgba(255,255,255,0.5))); /* Chrome, Safari:*/
+}	  
+
+.icand_gradientCover_DarkBottom {
+	filter:progid:DXImageTransform.Microsoft.Gradient( GradientType=0,
+		startColorstr='#00000000', endColorstr='#77000000' );/*IE6-9*/
+	zoom:1; /* MSIE HAS TO have width or height... or zoom */
+	background:#77000000; /*	 fallback (Opera) */
+	background:-moz-linear-gradient(top, rgba(0,0,0,0)70%, rgba(0,0,0,.5));   /* mozilla:FF3.6+ */
+	background:-webkit-gradient(linear,left top,left bottom,color-stop(0.7, rgba(0,0,0,0)),color-stop(1.0, rgba(0,0,0,0.5))); /* Chrome, Safari:*/
+}	  
+/*=================================================================*/	  
+
+
+.icand_dec_border ,
+.icand_dec_borderblock .block,
+.icand_dec_bordersection .section.main,
+.icand_dec_bordermono ,
+.icand_dec_bordermonoblock .block,
+.icand_dec_bordermonosection .section.main
+	{
+		 /* border-color set by colour zone */ 
+		 border-width:1px; 
+		
+		/* border-top-width:10px;
+		border-left-width:10px;*/
+		
+		border-style:solid;
+	}
+
+	
+.icand_settings_page_main_hr {  // divider for setttings page
+	color:#000;
+	background-color:#000;
+	height:8px;
+}
+
+.icand_settings_page_thin_hr {  // divider for setttings page
+	color:#000;
+	background-color:#000;
+	height:2px;
+}
+
+.icand_default_colours {
+	background:white;
+	colour:black;
+}
+
+.icand_dec_shading1 {
+	background:black;
+}
+
+.icand_dec_shading2 {
+	background:white;
+}
+
+.generalbox, .block	{
+	border:0;
+}
+
+.icand_menutable {
+	border:1px solid black;
+}
+.icand_menutable_td {
+	padding:5px 10px;
+}
+
+.icand_border_lr {
+	border-style:solid;
+	border-color:black;
+	border-left-width:2px;
+	border-right-width:2px;
+	margin-right:2px;
+}
+
+.icand_border_topbottom {
+	border-style:solid;
+	border-color:black;
+/*	border-top-width:2px;
+	border-bottom-width:2px;*/
+	border-width:2px 0;
+}
+
+.form-twodimensionmulticheckbox .row0 {
+	background:#f0f0f0;
+	color:black;
+}
+
+.icand_bg_inverted {	/* TO BE UPDATED TO FLIP BACKGROUND DEPENDING ON CONTEXT LIGHT OR DARK */
+	background:#444;
+}

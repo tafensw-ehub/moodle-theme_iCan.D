@@ -1,0 +1,53 @@
+/*//////////////////////  Gallery Grid Layout      /////////////////////////////
+
+Gallery Grid Layout  for eCommunities was created : / 19/12/2011
+By the TAFE NSW eLearning Hub
+
+/**
+* Licence 
+ * 
+ * This software is distributed under the terms and conditions of the GNU General Public Licence, v 3 (GPL). 
+ * The complete terms and conditions of the GPL are available at http://www.gnu.org/licenses/gpl-3.0.txt
+ * 
+ * Copyright Notice 
+ *
+ * Copyright © NSW Technical and Further Education Commission (TAFE NSW), TAFE eLearning Hub 2012 
+ */
+/*
+ *V01: modified : 19/12/2011 by: Kerrin Ireland
+ *V02: modified : 28/08/2012 by: Renee Lance
+ *V02.x: modified : 12/10/2012 by: ?
+ */
+
+/*-------------------------------------------------------------
+
+
+Contents
+--------------------------------------------------------------*/
+
+.GalleryGrid{
+	margin-top:8px;
+	width:99%;
+	overflow:hidden;
+	}
+.GalleryGrid img{
+	width:84px;
+	height:auto;
+	float:left;
+	clear:left;
+	margin:2px 9px 2px 0;
+	}
+.GalleryGrid p{
+	width:200px;
+	height:95px;
+	float:left;
+	padding:2 0 0 0;
+	text-wrap:unrestricted;
+	margin:0 7px 20px 0;
+	}
+.GalleryGrid p span.title{
+	display:block;
+	font-weight:bold;
+	color:#555;
+	margin-bottom:3px;
+	}

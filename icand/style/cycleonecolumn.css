@@ -1,0 +1,121 @@
+/*/////////////////Dreamweaver slider template/////////////
+
+These widgets are modified by TAFE NSW, TAFE eLearning Hub 2012.
+
+Created by: Renee Lance
+Date: 5/10/2011
+
+Modified by: Kerrin Ireland
+Modified date: 31/08/2012
+				12Oct2012 changed H3 to H4
+
+This structure is based on : jQuery Cycle Plugin by malsup http://www.http://malsup.com/jquery/
+
+///////////////////////////////////////////////////////////*/
+
+/*///////////////////////////////////////////////////////////
+
+Change widths and heights in the following elements if 
+required for more custom widths for single column slider.
+
+///////////////////////////////////////////////////////////*/
+.slideshow_container {
+    background-color: #E9E9E9;
+    height: 150%;
+    margin-bottom: 20px;
+    padding: 0 0 25px;
+    width: 98%;
+}
+.slideshow_container h4 {
+    font-size: 130%;
+    font-weight: normal;
+    margin-bottom: 0;
+    margin-top: 10px;
+    padding: 0 0 0 10px;
+    width: auto;
+}
+div.slideshow {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #AAAAAA;
+    border-top: 1px solid #AAAAAA;
+    height: 120px;
+    overflow: hidden;
+    padding-bottom: 0;
+    padding-top: 0;
+    width: 100%;
+}
+div.slideshow ul.nav {
+    display: block;
+    height: 25px;
+    margin: 0;
+    right: 0;
+    text-align: left;
+    width: 320px;
+}
+div.slideshow div.item {
+    height: 100%;
+    margin-right: 0;
+    padding: 0 0 0 10px;
+    width: 99%;
+}
+p.slideContent1 {
+    margin: 0;
+    padding: 10px 0 0;
+    width: 100%;
+}
+p.slideContent2 {
+    display: none;
+}
+div.slideshow p img {
+    border-left: 1px solid #D7D7D7;
+    float: right;
+    margin-left: 10px;
+    margin-right: 0;
+    top: -10px;
+    width: auto;
+}
+div.slideshow p a {
+    color: #575757;
+    font-size: 100%;
+    font-weight: bold;
+    margin-top: 5px;
+    top: 10px;
+}
+div.slideshow p a img {
+    float: none;
+    margin-left: 0;
+    padding: 0;
+    top: 3px;
+}
+div.slideshow ul.nav li {
+    position: relative;
+}
+div.slideshow ul.nav li.prev {
+    background: url("") no-repeat scroll left top transparent;
+    display: inline-block;
+    float: left;
+    height: 20px;
+    width: 20px;
+}
+div.slideshow ul.nav li.next {
+    background: url("") no-repeat scroll left top transparent;
+    display: inline-block;
+    float: left;
+    height: 20px;
+    width: 20px;
+}
+div.slideshow p.slideContent2 a.slideLink {
+    display: block;
+    margin: 0;
+}
+div.slideshow p.slideContent1 a.slideLink {
+    display: block;
+    margin: 0;
+}
+div.slideshow ul.nav li a {
+    display: block;
+    height: 20px;
+    margin-left: 1px;
+    padding: 0;
+    width: 17px;
+}

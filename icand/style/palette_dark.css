@@ -1,0 +1,73 @@
+/**
+ * Licence 
+ * 
+ * This software is distributed under the terms and conditions of the GNU General Public Licence, v 3 (GPL). 
+ * The complete terms and conditions of the GPL are available at http://www.gnu.org/licenses/gpl-3.0.txt
+ * 
+ * Copyright Notice 
+ *
+ * Copyright © NSW Technical and Further Education Commission (TAFE NSW), TAFE eLearning Hub 2012 
+ *
+ * Acknowledgements
+ * - Renee Lance, project manager and lead designer 
+ * - Glen Byram, lead programmer
+ *
+ * Created: 11May2012 - Glen Byram
+ * Modified by: 20/06/12 - Renee Lance TAFE eLearning Hub
+*/
+
+
+.icand_d_bg_clr_light.icand_d_bg_clr_mono,
+.icand_d_bg_clr_light.icand_d_bg_clr_monoblock .block {background:#E0E0E0;border-color:#00002f;}
+
+.icand_d_bg_clr_light.icand_d_bg_clr_1,	
+.icand_d_bg_clr_light.icand_d_bg_clr_1block .block 
+{background:#FEBFBF;border-color:#00002f;}
+
+
+.icand_d_bg_clr_light.icand_d_bg_clr_2,	.icand_d_bg_clr_light.icand_d_bg_clr_2block .block {background:#FED9BF;border-color:#00002f;}
+.icand_d_bg_clr_light.icand_d_bg_clr_3,	.icand_d_bg_clr_light.icand_d_bg_clr_3block .block {background:#FEE6BF;border-color:#00002f;}
+.icand_d_bg_clr_light.icand_d_bg_clr_4,	.icand_d_bg_clr_light.icand_d_bg_clr_4block .block {background:#FEF2BF;border-color:#00002f;}
+.icand_d_bg_clr_light.icand_d_bg_clr_5,	.icand_d_bg_clr_light.icand_d_bg_clr_5block .block {background:#FEFFBF;border-color:#00002f;}
+.icand_d_bg_clr_light.icand_d_bg_clr_6,	.icand_d_bg_clr_light.icand_d_bg_clr_6block .block {background:#E6FEBF;border-color:#00002f;}
+.icand_d_bg_clr_light.icand_d_bg_clr_7,	.icand_d_bg_clr_lightblock.icand_d_bg_clr_7 .block {background:#BFFEBF;border-color:#00002f;}
+.icand_d_bg_clr_light.icand_d_bg_clr_8,	.icand_d_bg_clr_lightblock.icand_d_bg_clr_8 .block {background:#BFFFFE;border-color:#00002f;}
+.icand_d_bg_clr_light.icand_d_bg_clr_9,	.icand_d_bg_clr_lightblock.icand_d_bg_clr_9 .block {background:#BFCFFE;border-color:#00002f;}
+.icand_d_bg_clr_light.icand_d_bg_clr_10,	.icand_d_bg_clr_light.icand_d_bg_clr_10block .block {background:#D4BFFE;border-color:#00002f;}
+.icand_d_bg_clr_light.icand_d_bg_clr_11,	.icand_d_bg_clr_light.icand_d_bg_clr_11block .block {background:#EABFFE;border-color:#00002f;}
+.icand_d_bg_clr_light.icand_d_bg_clr_12,	.icand_d_bg_clr_light.icand_d_bg_clr_12block .block {background:#FEBFEF;border-color:#00002f;}
+
+
+.icand_d_bg_clr_dark.icand_d_bg_clr_1,	.icand_d_bg_clr_dark.icand_d_bg_clr_1block .block {background:#B20000;border-color:#00002f;}
+.icand_d_bg_clr_dark.icand_d_bg_clr_2,	.icand_d_bg_clr_dark.icand_d_bg_clr_2block .block {background:#B24700;border-color:#00002f;}
+.icand_d_bg_clr_dark.icand_d_bg_clr_3,	.icand_d_bg_clr_dark.icand_d_bg_clr_3block .block {background:#B26B00;border-color:#00002f;}
+.icand_d_bg_clr_dark.icand_d_bg_clr_4,	.icand_d_bg_clr_dark.icand_d_bg_clr_4block .block {background:#B28F00;border-color:#00002f;}
+.icand_d_bg_clr_dark.icand_d_bg_clr_5,	.icand_d_bg_clr_dark.icand_d_bg_clr_5block .block {background:#B2B300;border-color:#00002f;}
+.icand_d_bg_clr_dark.icand_d_bg_clr_6,	.icand_d_bg_clr_dark.icand_d_bg_clr_6block .block {background:#6BB200;border-color:#00002f;}
+.icand_d_bg_clr_dark.icand_d_bg_clr_7,	.icand_d_bg_clr_dark.icand_d_bg_clr_7block .block {background:#008E00;border-color:#00002f;}
+.icand_d_bg_clr_dark.icand_d_bg_clr_8,	.icand_d_bg_clr_dark.icand_d_bg_clr_8block .block {background:#006B6B;border-color:#00002f;}
+.icand_d_bg_clr_dark.icand_d_bg_clr_9,	.icand_d_bg_clr_dark.icand_d_bg_clr_9block .block {background:#00248E;border-color:#00002f;}
+.icand_d_bg_clr_dark.icand_d_bg_clr_10,	.icand_d_bg_clr_dark.icand_d_bg_clr_10block .block {background:#24006B;border-color:#00002f;}
+.icand_d_bg_clr_dark.icand_d_bg_clr_11,	.icand_d_bg_clr_dark.icand_d_bg_clr_11block .block {background:#47006B;border-color:#00002f;}
+.icand_d_bg_clr_dark.icand_d_bg_clr_12,	.icand_d_bg_clr_dark.icand_d_bg_clr_12block .block {background:#8E006B;border-color:#00002f;}
+
+/* use the built-in, until colour schemes are resolved
+.icand_d_bg_clr_dark.icand_d_bg_clr_mono,
+.icand_d_bg_clr_dark.icand_d_bg_clr_monoblock .block {background:#000;border-color:#000;color:#000;}
+
+	.icand_d_colour_headcontent
+,	.icand_d_colour_bodycontent {
+	background:none;
+}
+*/
+
+/* THE FOLLOWING RULE MUST BE LATER IN CSS THAN icand_colour___ TO OVERRIDE for .block */
+.icand_dec_bordermono ,
+.icand_dec_borderblockmono .block {
+	border-color:black; 
+}
+
+/* MUST be after any icand_d_colour___ */
+.icand_suppress_background {
+	background:none;
+}

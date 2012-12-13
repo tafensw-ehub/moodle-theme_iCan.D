@@ -1,0 +1,273 @@
+/**
+ * Licence 
+ * 
+ * This software is distributed under the terms and conditions of the GNU General Public Licence, v 3 (GPL). 
+ * The complete terms and conditions of the GPL are available at http://www.gnu.org/licenses/gpl-3.0.txt
+ * 
+ * Copyright Notice 
+ *
+ * Copyright © NSW Technical and Further Education Commission (TAFE NSW), TAFE eLearning Hub 2012 
+ *
+ * Acknowledgements
+ * - Renee Lance, project manager and lead designer 
+ * - Glen Byram, lead programmer
+ *
+ * Created: 13Apr2012  - Glen Byram TAFE eLearning Hub
+ * Modified: 02Aug2012 - Glen added 2 position:static rules for MSIE7/8
+ *				- 1 overflow:visible rule to override base theme, for wide menus in dock
+ *				- the "overflow:visible" rule required addition of !important to #dockeditempanel width
+ *	03Aug2012  - Glen added .dockedtitle.activeitem & #dockeditempanel 100% rules for MSIE7/8
+ *				- added .icand_dock_float/.icand_dock_squeeze for body.has_dock
+*/
+
+/* extended from the dock CSS for anomaly theme */
+.dockedtitle h2 {
+	font-size: 10px;/*this value is injected inline by YUI. Thanks a lot. Repeat here for MSIE */
+}
+
+body.has_dock.icand_dock_overlap {
+    margin:0;/*override inherited force margin, to make dock sit over body */
+}
+
+body.has_dock.icand_dock_squeeze {
+    margin-left:50px;/*same as #dock->width*/
+}
+
+.dockeditem.firstdockitem .dockedtitle {
+	height: auto !important; /*YUI can force an inline height which is wrong!! why??? */
+}
+
+.icand_dock_overlap .dockeditem.firstdockitem {
+	padding-top:5em;	
+}
+
+.icand_dock_squeeze .dockeditem.firstdockitem {
+	padding-top:0.5em;
+}
+
+/*side strip containing docked items*/
+#dock {
+    position:fixed;
+    top:0;
+	left:0;
+	width:50px;
+    z-index:8000;
+    border-right:0 none;
+	height:auto;
+}
+
+#dock.nothingdocked {
+    visibility:hidden;
+    display:none;
+}
+
+#dock .controls {/*indent from bottom*/
+	margin-top:0;	/*override base theme */
+    bottom:auto;
+}
+
+/*************** padding etc *******************/
+.dockeditem {
+    padding:2px;
+    padding-right:0px;
+}
+/* -----------.docked title are the keywords in the dock */
+.dockedtitle {
+    padding-bottom:5px;
+    cursor:pointer;
+	width:80%;
+}
+.dockedtitle h2 {
+    margin:0;
+    padding:10px 3px;
+}
+.dockedtitle.activeitem { /*pop-outs from side bar*/
+/*	width:200%; */
+	width:100%;
+}
+
+#dockeditempanel {
+/*    left:195%;/* hang outside side panel */
+	left:100%;
+}
+
+/* .controls is the little "undock all" graphic buttom -------- */
+#dock .controls img {
+    cursor:pointer;
+    margin-left:10px;
+}
+/* dockeditempanel is the pop-out from side bar --------------- */
+#dockeditempanel {
+    width:300px !important; /* 2Aug2012 if overflow:visible in contents, YUI inlines a width!! */
+    position:relative;
+    z-index:12000;
+}
+#dockeditempanel.dockitempanel_hidden {
+    display:none;
+}
+#dockeditempanel .dockeditempanel_content {
+	margin:0;
+    position:relative;
+    min-height:100px;
+    border-style:solid;
+    border-width:5px;
+}
+#dockeditempanel .dockeditempanel_hd {
+    border-width:0;
+    padding:2px;
+}
+#dockeditempanel .dockeditempanel_bd .block_docked {
+    margin:10px;
+}
+#dockeditempanel .block_calendar_month.block_docked {
+    text-align:center;
+}
+#dockeditempanel .dockeditempanel_hd {
+    text-align:right;
+}
+#dockeditempanel .dockeditempanel_hd h2 {
+    display:inline;
+    margin:0;
+    padding-right:2em;
+}
+
+#dockeditempanel .dockeditempanel_hd .commands {
+    display:inline;
+}
+#dockeditempanel .dockeditempanel_hd .commands img {
+    margin-right:3px;
+    vertical-align:middle;
+}
+#dockeditempanel .dockeditempanel_bd {
+    overflow:auto;
+    width:auto; /* adds scroll to dock panel */
+}
+
+/* colours **********************************/
+#dock {
+	background-color:none;/*override base theme*/
+}
+
+ #dock .controls
+, .dockeditem 
+{ /* ONCE SET, OPACITY CAN'T BE REDUCED!!!! */
+    background-color:white; /*#C8C9C7;*/
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";/*IE8*/
+	filter:alpha(opacity=80);/*IE7*/
+	zoom:1; /*IE requires element to be positioned for filter/opacity to work*/
+	-moz-opacity:0.8;/*Older mozilla broswers like NN*/ 
+	-khtml-opacity:0.8;/*Old versions of Safari and "KHTML" browser engines*/ 
+	opacity:0.8;/*FF, Safari, and Opera*/ 	
+}
+
+/* pop-out heading bar */
+#dockeditempanel .dockeditempanel_hd     { background-color:#eee;}
+#dockeditempanel .dockeditempanel_hd h2 {color:#000;}
+/* pop-out body bar */
+#dockeditempanel .dockeditempanel_content {
+    background-color:#eee;
+    border-color:#697F55;	
+}
+
+/* "button" in side bar */
+/* inactive */
+.dockedtitle {background-color:black;}
+.dockedtitle h2 {color:white;font-weight:bold;}/* YUI inlines this as 10px high. Can't change weight. */
+/* active */
+/*#dock*/ /*.dockedtitle.activeitem {background-color:#697F55;}	*/
+/*#dock*/ 
+/*.dockedtitle.activeitem h2 {
+	color:white !important;
+	}
+*/	
+
+#dockeditempanel .dockeditempanel_content {
+    border-color:#222;/*#697F55;*/
+}
+
+/**************** corners *******************/
+/*#dock*/ /*.dockeditem.firstdockitem {
+    -webkit-border-top-left-radius:10px;
+    -moz-border-top-right-radius:10px;
+    border-top-left-radius:10px;
+}*/
+
+/* have rounded corners at bottom-right of side-bar */
+#dock .controls {
+    -webkit-border-bottom-right-radius:10px;
+    -moz-border-bottom-right-radius:10px;
+    border-bottom-right-radius:10px;
+/*    -webkit-border-bottom-left-radius:10px;
+    -moz-border-bottom-right-radius:10px;
+    border-bottom-left-radius:10px;	*/
+}
+
+/*#dock */
+.dockedtitle {
+/* round on all corners */
+    -webkit-border-top-left-radius:10px;
+    -moz-border-radius-topleft:10px;
+    border-top-left-radius:10px;
+    -webkit-border-bottom-left-radius:10px;
+    -moz-border-radius-bottomleft:10px;
+    border-bottom-left-radius:10px;
+
+    -webkit-border-top-right-radius:10px;
+    -moz-border-top-right-radius:10px;
+    border-top-right-radius:10px;		
+    -webkit-border-bottom-right-radius:10px;
+    -moz-border-bottom-right-radius:10px;
+    border-bottom-right-radius:10px;
+}
+
+/*#dock*/ .dockedtitle.activeitem {
+/* only round on left */
+    -webkit-border-top-left-radius:10px;
+    -moz-border-radius-topleft:10px;
+    border-top-left-radius:10px;
+    -webkit-border-bottom-left-radius:10px;
+    -moz-border-radius-bottomleft:10px;
+    border-bottom-left-radius:10px;
+	
+	-webkit-border-top-right-radius:0;
+    -moz-border-top-right-radius:0;
+    border-top-right-radius:0;		
+    -webkit-border-bottom-right-radius:0;
+    -moz-border-bottom-right-radius:0;
+    border-bottom-right-radius:0;
+}
+
+#dockeditempanel .dockeditempanel_content {
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    -webkit-border-top-left-radius:0;
+    -moz-border-top-left-radius:0;
+    border-top-left-radius:0;
+}
+
+#dockeditempanel .dockeditempanel_hd {
+    -webkit-border-top-right-radius:10px;
+    -moz-border-top-right-radius:10px;
+    border-top-right-radius:10px;
+}
+
+/* ===============================================================
+ * Herebelow we make sacrifices to ancient gods: MSIE 8 and prior.
+ */
+
+/* 02Aug2012 by glen: 
+  msie 7 & 8 : fix non-scrolling elements (due to MS-stacking MS-context MS-bug) 
+  #dockeditempanel.oversized_content fixes scroling, but just #dockeditempanel needed for horiz overflow
+*/
+#dockeditempanel .block_tree li.item_with_icon > p {
+	*position:static;	/* override YUI setting of relative */
+}
+
+#dockeditempanel .block_tree li.item_with_icon > p img {
+	*position:static;	/* override YUI setting of absolute*/
+}
+
+#dockeditempanel .block_navigation .block_tree li {
+	overflow:visible; /* overide "hidden" from base theme. Allows scroll bar if item width too much. */	
+}

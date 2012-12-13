@@ -1,0 +1,378 @@
+/**
+ * Licence 
+ * 
+ * This software is distributed under the terms and conditions of the GNU General Public Licence, v 3 (GPL). 
+ * The complete terms and conditions of the GPL are available at http://www.gnu.org/licenses/gpl-3.0.txt
+ * 
+ * Copyright Notice 
+ *
+ * Copyright © NSW Technical and Further Education Commission (TAFE NSW), TAFE eLearning Hub 2012 
+ *
+ * Acknowledgements
+ * - Renee Lance, project manager and lead designer 
+ * - Glen Byram, lead programmer
+ *
+ * Created:13Jun2012 - Glen Byram TAFE eLearning Hub
+ * Modified by: 20Jun2012 - Renee Lance TAFE eLearning Hub
+ * 		17Aug2012 - Glen added height to .hd
+ *		10Sep2012 - Glen added 3 rules for .yui3-panel and yui3-widget
+ *		12Oct2012 - Glen moved color: defs to icand_content_colours.css
+ *		03dec2012 - Glen another fix for MSIE, in filepicker
+ */
+
+.yui3-dd-draggable {
+	z-index:1000;
+}
+
+.yui3-menu .yui3-shim {
+    border:0 none;
+    height:100%;
+    left:0;
+    margin:0;
+    opacity:0;
+    padding:0;
+    position:absolute;
+    top:0;
+    width:100%;
+    z-index:-1;
+}
+/* these next 2 come from YUI plugin, but it is good to load it early,
+ to take these elements out of the rendering flow to stop later resizing of container divs */
+.yui3-menu .yui3-menu {
+    position:absolute;
+}
+.yui3-menu li {
+    list-style-type:none;
+}
+
+/* 3 rules added 10Sep2012, for popup controls under Moodle 2.3 */
+.yui3-panel-content {
+    background: none repeat scroll 0 0 white;
+    border: 1px solid black;
+	padding: 8px;
+}
+
+.yui3-panel .yui3-widget-ft {
+    background: none repeat scroll 0 0 #EDF5FF;
+}
+
+.yui3-widget-mask {
+    background-color: black;
+    opacity: 0.4;
+}
+
+/* the following comes from YUI plugin, so don't duplicate. They are just here for info.
+.yui3-menu .yui3-menu {
+    position:absolute;
+    z-index:1;
+}
+
+.yui3-menu-hidden {
+    left:-10000px;
+    top:-10000px;
+    visibility:hidden;
+}
+
+.yui3-menu-horizontal > .yui3-menu-content > ul:after {
+    clear:both;
+    content:"";
+    display:block;
+    font-size:0;
+    line-height:0;
+    visibility:hidden;
+}
+.yui3-menu ul, .yui3-menu li {
+    margin:0;
+    padding:0;
+}
+.yui3-menu li {
+    list-style-type:none;
+}
+  .yui3-menu-label
+, .yui3-menuitem-content {
+    display:block;
+    text-align:left;
+    white-space:nowrap;
+}
+
+*/
+
+
+
+.yui3-menu-horizontal li {
+    float:left;
+    width:auto;
+}
+.yui3-menu-horizontal li li {
+    float:none;
+}
+
+/*MSIE7 DOESN'T DO :after */
+/*
+.yui3-menu-label:after { 
+	content:" V";
+}
+.custom_menu_submenu .yui3-menu-label:after {
+	content:" >";
+}
+*/
+
+/*
+  .yui3-menu-horizontal .yui3-menu-label 
+, .yui3-menu-horizontal .yui3-menu-content 
+, 					   .yui3-menu-label	
+, 					   .yui3-menuitem-content
+, .yui3-menu .yui3-menu .yui3-menuitem-content {
+	background-image:none; 
+	background-color:inherit;
+	color:inherit;
+}
+*/
+
+/* MSIE7 is buggy. It won't allow background-color:none to suppress inherited background */
+
+/* "a" co-selector needed for MSIE7 
+  .yui3-menu-horizontal  a.yui3-menu-label  {
+background:none;
+color:inherit;
+} */
+
+/************************************************************/
+/*			BORDERS											*/
+/************************************************************/
+
+/* for main horizontal strip & dropdowns */
+/* .yui3-menu-content {
+    border:1px solid #808080;
+}
+*/
+
+/* dropdowns. Overrides general case (above) */
+.custom_menu_submenu .yui3-menu-content {
+    border:1px solid black;
+}
+
+
+
+/*
+  .yui3-menu-content
+, .yui3-menu .yui3-menu .yui3-menu-content {
+	border:0;
+	font-size:inherit;
+}
+*/
+
+/*
+  .yui3-menu-horizontal .yui3-menu-label
+ , .yui3-menu-horizontal .yui3-menuitem-content {
+	border:0;
+}
+*/
+
+
+/************************************************************/
+/*			BACKGROUNDS										*/
+/************************************************************/
+/* for everything */
+/*
+.yui3-menu-content {
+   background:none repeat scroll 0 0 #FFFFFF;  
+ 	background:inherit; 
+} */
+
+/* for drop-downs. Overrides "for everything" */
+.custom_menu_submenu .yui3-menu-content {
+   background:none repeat scroll 0 0 #FFFFFF;  
+/* 	background:inherit; */
+}
+
+/*
+  .yui3-menu-label
+, .yui3-menuitem-content
+{
+	background:inherit;
+
+	background:white;
+    color:#000000;
+
+}
+*/
+
+/* top-level, no sub, not selected */
+.yui3-menuitem  a.yui3-menuitem-content   {
+/*
+	background-image:none;
+	background-color:inherit;
+	color:inherit;
+*/	
+}
+
+/* top-level, no sub, mouse over */
+#page-content .yui3-menuitem.yui3-menuitem-active a.yui3-menuitem-content 
+/* the first selector required, to counteract a rule in icand_content_colours.css */
+, .yui3-menuitem.yui3-menuitem-active a.yui3-menuitem-content {
+	text-decoration:none;
+ }
+ 
+/*sub items with NO submenu:active*/
+#page-content  .yui3-menu-horizontal  .custom_menu_submenu .yui3-menuitem.yui3-menuitem-active a.yui3-menuitem-content
+, .yui3-menu-horizontal  .custom_menu_submenu .yui3-menuitem.yui3-menuitem-active a.yui3-menuitem-content{ /*selected with no sub-menu*/
+/*  background-image:none; */
+/*  background-color:#0f0f0f;	/*#b3d4ff;*/
+/*  color:white;  */
+  text-decoration:none;
+ }
+
+/**************************************/
+/*
+.yui3-menu-horizontal .yui3-menu-content {
+    background:url("yui_image.php?file=3.4.1/sprite.png") repeat-x scroll 0 0 transparent;
+    line-height:2;
+    padding:0;
+}
+*/
+
+.yui3-menu-content {
+    line-height:1.5;
+/*    padding:3px 0; */
+}
+
+  a.yui3-menu-label
+, a.yui3-menuitem-content
+{
+	text-decoration:none;
+}
+
+  .yui3-menu-label
+, .yui3-menuitem-content
+{
+/*	border:0 none; */
+    cursor:default;
+    float:none;
+    margin:0;
+    padding:3px 10px;		/* between menu items */
+    text-decoration:none;
+}
+
+/********************************************************/
+/* popups: e.g. file picker 							*/
+/********************************************************/
+.yui-panel-container {
+    padding: 0 1px;
+	border:2px solid black;/*17Aug2012*/
+}
+
+ {
+    font-size: 12px;
+}
+
+.yui-panel {
+/*    border-color: #808080;
+    border-style: solid;
+    border-width: 1px 0; */
+    left: 0;
+    position: relative;
+    top: 0;
+/*    z-index: 1; */
+}
+
+/* "close" button */
+.container-close {
+    background: url("yui_image.php?file=2.9.0/sprite.png") no-repeat scroll 0 -300px transparent;
+    cursor: pointer;
+    height: 15px;
+    position: absolute;
+    right: 6px;
+    top: 5px;
+    width: 25px;
+}
+
+.yui-panel-container .container-close {
+    overflow: hidden;
+    text-decoration: none;
+    text-indent: -10000em;
+}
+
+.yui-panel .hd {
+    background: url("yui_image.php?file=2.9.0/sprite.png") repeat-x scroll 0 -200px transparent;
+    color: #000000;
+    font-size: 93%;
+    font-weight: bold;
+    line-height: 2;
+    padding: 0 10px;
+	
+	height: 2em;/*17Aug2012*/
+}
+
+.yui-panel .hd {
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.yui-panel .bd {
+    padding: 10px;
+}
+
+  .yui-layout-bd 
+, .yui-panel .bd
+, .yui-panel .ft {
+    background-color: #F2F2F2;
+}
+
+.yui-layout-bd {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+/*    background-color: #F2F2F2; moved to another rule */
+    border-color: -moz-use-text-color #808080;
+    border-left: 1px solid #808080;
+    border-right: 1px solid #808080;
+    border-style: none solid;
+    border-width: medium 1px;
+    text-align: left;
+}
+
+.yui-layout-unit {
+	float: none;
+    margin: 0;
+    padding: 0;
+}
+
+.file-picker .fp-repo-area { /* 03dec2012 */
+	top:41px;
+	left:0;
+	bottom:auto;	/* override 1px. else height = 0 !!!?!?!?! */
+}
+
+.yui-layout-unit div.yui-layout-bd-nohd {
+    border-top: 1px solid #808080;
+}
+
+.yui-layout-unit div.yui-layout-bd-noft {
+    border-bottom: 1px solid #808080;
+}
+
+.yui-layout-noscroll div.yui-layout-bd {
+    overflow: hidden;
+}
+
+.yui-layout-bd {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+  .yui-panel .hd
+, .yui-panel .bd
+, .yui-panel .ft {
+    border-color: #808080;
+    border-style: solid;
+    border-width: 0 1px;
+    margin: 0 -1px;
+}
+
+.yui-panel .submitbuttons {
+	clear:both;
+}

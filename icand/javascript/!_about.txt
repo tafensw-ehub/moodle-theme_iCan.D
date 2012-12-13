@@ -1,0 +1,9 @@
+utility.js is part of the theme (accessibility & sticky footer)
+
+The following were included by Renee for decorator widgets:
+'jquery.cycle.all', 
+'jquery-1.7.1.min', 
+'jquery-ui-1.8.17.custom.min', 
+'multiWidgets', 
+'scripts'
+One or more of the above conflicts with the Javascript used by the course_menu block.

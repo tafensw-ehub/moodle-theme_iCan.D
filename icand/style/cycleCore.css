@@ -1,0 +1,143 @@
+/*/////////////////Dreamweaver slider template/////////////
+
+These widgets are modified by TAFE NSW, TAFE eLearning Hub 2012.
+
+Created by: Renee Lance
+Date: 5/10/2011
+
+Modified by: Kerrin Ireland
+Modified date: 31/08/2012
+				12Oct2012 by ? - changed H3 to H4, removed some old comments.
+
+This structure is based on : jQuery Cycle Plugin by malsup http://www.http://malsup.com/jquery/
+
+///////////////////////////////////////////////////////////*/
+/*/////////////////////////Contents////////////////////////
+
+ 01 - Layout for Slider
+ 02 - Slider show navigation
+ 03 - Content styles
+
+//////////////////////////////////////////////////////////*/
+
+div.slideshow_container {
+    border: 1px solid #AAAAAA;
+    height: 100%;
+    position: relative;
+}
+.slideshow_container h4 {
+    display: block;
+    padding: 3px 5px;
+    width: 100%;
+}
+div.slideshow {
+    height: 130px;
+    margin: 0 auto;
+    overflow: scroll;
+    padding: 0;
+    position: relative;
+    z-index: 5;
+}
+div.slideshow ul.nav {
+    bottom: 0;
+    display: inline-block;
+    height: 25px;
+    list-style: none outside none;
+    margin: 0 38%;
+    position: absolute;
+    width: 155px;
+    z-index: 15;
+	}
+.course-content div.slideshow ul.nav,
+.course-content ul.topics li div.content .summary .no-overflow div.slideshow ul.nav,  
+.course-content ul.weeks li div.content .summary .no-overflow div.slideshow ul.nav{
+	margin-bottom:0;
+	}
+.course-content div.slideshow ul.nav li,
+.course-content ul.topics li div.content .summary .no-overflow div.slideshow ul.nav li, 
+.course-content ul.weeks li div.content .summary .no-overflow div.slideshow ul.nav li{
+	list-style-type:none;
+	}
+div.slideshow ul.nav li.prev {
+    margin: 0;
+}
+div.slideshow ul.nav li.next {
+    margin: 0;
+}
+div.slideshow ul.nav li a {
+    display: none;
+    float: left;
+    height: 11px;
+    padding: 0 5px;
+    text-indent: -9999px;
+    width: 11px;
+}
+div.slideshow ul.nav li.prev a {
+	background:transparent url([[pix:theme|prev]])  no-repeat top left;
+    height: 30px;
+    width: 25px;
+}
+div.slideshow ul.nav li.next a {
+	background:transparent url([[pix:theme|next]])  no-repeat top left;
+    height: 30px;
+    width: 25px;
+}
+div.slideshow ul#nav li#slideItem a.activeSlide {
+}
+h1.slideShowCatption {
+    font-size: 90%;
+    position: absolute;
+    top: -3000px;
+}
+p.slideContent2 {
+    display: block;
+    float: right;
+    margin: 0;
+    width: 48%;
+}
+p.slideContent1 {
+    border-right: 1px dotted #999999;
+    display: inline-block;
+    float: left;
+    margin: 0;
+    padding-right: 7px;
+    width: 48%;
+}
+span.slideTitle {
+    display: block;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 110%;
+    font-weight: bold;
+    padding-bottom: 3px;
+}
+div.slideshow p img {
+    float: left;
+    position: relative;
+    top: -2px;
+    width: 80px;
+}
+div.slideshow p a {
+    color: #575757;
+    font-weight: bold;
+    margin-top: 5px;
+}
+div.slideshow p a:active, div.slideshow p a:visited {
+    color: #575757;
+}
+div.slideshow p a:hover, div.slideshow p a:focus {
+    color: #000000;
+}
+div.slideshow p a img {
+    border: medium none;
+    float: left;
+    height: auto;
+    margin-right: 5px;
+    width: auto;
+}
+clearFloat {
+    clear: both;
+}
+.userInstructions {
+    height: 1px;
+    text-indent: -9999px;
+}

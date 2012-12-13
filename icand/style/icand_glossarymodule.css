@@ -1,0 +1,42 @@
+/**
+ * Licence 
+ * 
+ * This software is distributed under the terms and conditions of the GNU General Public Licence, v 3 (GPL). 
+ * The complete terms and conditions of the GPL are available at http://www.gnu.org/licenses/gpl-3.0.txt
+ * 
+ * Copyright Notice 
+ *
+ * Copyright © NSW Technical and Further Education Commission (TAFE NSW), TAFE eLearning Hub 2012 
+ *
+ * Acknowledgements
+ * - Renee Lance, project manager and lead designer 
+ * - Glen Byram, lead programmer
+ *
+ * Created:01/06/12 - Renee Lance TAFE eLearning Hub
+ * Modified: 20/06/12 - Renee Lance TAFE eLearning Hub
+ *		11Oct2012 Glen : shortened some selectors
+*/
+
+/*/===================================Glossary=============================/*/
+#region-main .glossarydisplay{
+	margin:0 auto 20px auto;
+	padding:0;
+	width:96%;
+	}
+.path-mod-glossary .entrybox, 
+.path-mod-glossary table.glossaryapproval, 
+.path-mod-glossary .glossarypost .entrylowersection table{
+	width:96%;
+	}
+.entrybox{
+	border:1px solid #d7d7d7;
+	background-color:#ffffff;
+	padding:10px;
+	}
+#region-main .glossarydisplay div.tabtree{
+	padding:0;
+	margin:0;
+	}
+#region-main .glossarydisplay div.tabtree ul.tabrow0{
+	margin:0;
+	}
